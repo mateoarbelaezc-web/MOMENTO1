@@ -93,6 +93,7 @@ bool MainWindow::eventFilter(QObject* obj, QEvent* event) {
             QKeyEvent* keyEvent = static_cast<QKeyEvent*>(event);
             if (keyEvent->key() == Qt::Key_Up) teclaArriba = true;
             if (keyEvent->key() == Qt::Key_Down) teclaAbajo = true;
+            if (keyEvent->key() == Qt::Key_Escape) volverAlMenu();
             return true;
         }
         if (event->type() == QEvent::KeyRelease) {
@@ -109,21 +110,22 @@ void MainWindow::actualizar() {
     escena->update();
     pelota->mover();
 
-    if (pelota->y() <= 8 || pelota->y() >= 570)
+    if (pelota->y() <= 8 || pelota->y() >= 580)
         pelota->setVelY(-pelota->getVelY());
 
     if (pelota->collidesWithItem(naveRebelde)) {
         pelota->setVelX(qAbs(pelota->getVelX()));
-        fisicaMotor->aplicarAnguloImpacto(pelota, naveRebelde->y(), 80.0f);
+        fisicaMotor->aplicarAnguloImpacto(pelota, naveRebelde->y(), 80.0f, dificultad->getVelBola());
     }
 
     if (pelota->collidesWithItem(naveImperial)) {
         pelota->setVelX(-qAbs(pelota->getVelX()));
-        fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), 80.0f);
+        fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), 80.0f, dificultad->getVelBola());
     }
 
     if (pelota->collidesWithItem(obstaculo)) {
-        float desvio = ((rand() % 400) - 200) / 100.0f;
+        float rango = (dificultad->getNivel() == 1) ? 400.0f : 850.0f;
+        float desvio = ((rand() % (int)rango) - rango/2) / 100.0f;
         pelota->setVelY(pelota->getVelY() + desvio);
     }
 
@@ -173,4 +175,21 @@ void MainWindow::actualizar() {
     if (teclaAbajo) naveRebelde->moverAbajo();
     naveImperial->seguirPelota(pelota);
     obstaculo->moverVertical();
+}
+
+void MainWindow::volverAlMenu() {
+    timer->stop();
+    escena->clear();
+    juegoIniciado = false;
+
+    pelota = nullptr;
+    naveRebelde = nullptr;
+    naveImperial = nullptr;
+    obstaculo = nullptr;
+    marcador = nullptr;
+    fisicaMotor = nullptr;
+    dificultad = nullptr;
+
+    menu = new MenuDificultad(escena);
+    menu->mostrar();
 }

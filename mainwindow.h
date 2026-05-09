@@ -43,6 +43,7 @@ private:
     MenuDificultad* menu;
     bool juegoIniciado;
     void iniciarJuego();
+    void volverAlMenu();
 };
 
 #endif

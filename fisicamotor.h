@@ -8,7 +8,7 @@
 class FisicaMotor {
 public:
     FisicaMotor();
-    void aplicarAnguloImpacto(Pelota* pelota, float yNave, float altoNave);
+    void aplicarAnguloImpacto(Pelota* pelota, float yNave, float altoNave, float velocidad);
 };
 
 #endif

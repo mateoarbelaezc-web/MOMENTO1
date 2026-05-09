@@ -10,15 +10,15 @@ Dificultad::Dificultad(int nivel) {
     this->nivel = nivel;
 
     if (nivel == 1) {
-        velBola = 5.0f;
-        velEnemigo = 3.0f;
-        margenError = 80.0f;
+        velBola = 6.0f;
+        velEnemigo = 3.5f;
+        margenError = 75.0f;
         gamesParaGanar = 3;
-        velObstaculo = 3.0f;
+        velObstaculo = 4.5f;
     } else {
-        velBola = 6.5f;
-        velEnemigo = 5.0f;
-        margenError = 20.0f;
+        velBola = 8.5f;
+        velEnemigo = 4.5f;
+        margenError = 45.0f;
         gamesParaGanar = 6;
         velObstaculo = 7.0f;
     }

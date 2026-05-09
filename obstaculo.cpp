@@ -4,8 +4,8 @@ Obstaculo::Obstaculo(float vel) {
     ancho = 20.0f;
     alto = 250.0f;
     velY = vel;
-    limSuperior = 50.0f;
-    limInferior = 400.0f;
+    limSuperior = 10.0f;
+    limInferior = 350.0f;
     esMovil = true;
     setPos(390, 200);
 }

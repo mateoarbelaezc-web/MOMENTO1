@@ -17,6 +17,8 @@ void Pelota::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
 }
 
 void Pelota::mover() {
+    if (velY > 5.0f) velY = 5.0f;
+    if (velY < -5.0f) velY = -5.0f;
     setPos(x() + velX, y() + velY);
 }
 
