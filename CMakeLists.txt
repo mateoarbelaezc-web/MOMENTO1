@@ -23,6 +23,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(TennisStarWars
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        pelota.h pelota.cpp
+        naverebelde.h naverebelde.cpp
+        naveimperial.h naveimperial.cpp
+        marcador.h marcador.cpp
+        obstaculo.h obstaculo.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TennisStarWars APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

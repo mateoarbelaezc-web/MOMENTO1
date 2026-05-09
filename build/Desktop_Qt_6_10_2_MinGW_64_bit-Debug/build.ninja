@@ -73,6 +73,46 @@ build CMakeFiles/TennisStarWars.dir/mainwindow.cpp.obj: CXX_COMPILER__TennisStar
   OBJECT_DIR = CMakeFiles\TennisStarWars.dir
   OBJECT_FILE_DIR = CMakeFiles\TennisStarWars.dir
 
+build CMakeFiles/TennisStarWars.dir/pelota.cpp.obj: CXX_COMPILER__TennisStarWars_unscanned_Debug C$:/Users/defaultuser0/Documents/TennisStarWars/pelota.cpp || cmake_object_order_depends_target_TennisStarWars
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TennisStarWars.dir\pelota.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.2/mingw_64/include/QtGui -isystem C:/Qt/6.10.2/mingw_64/include/QtMultimedia -isystem C:/Qt/6.10.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\TennisStarWars.dir
+  OBJECT_FILE_DIR = CMakeFiles\TennisStarWars.dir
+
+build CMakeFiles/TennisStarWars.dir/naverebelde.cpp.obj: CXX_COMPILER__TennisStarWars_unscanned_Debug C$:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.cpp || cmake_object_order_depends_target_TennisStarWars
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TennisStarWars.dir\naverebelde.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.2/mingw_64/include/QtGui -isystem C:/Qt/6.10.2/mingw_64/include/QtMultimedia -isystem C:/Qt/6.10.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\TennisStarWars.dir
+  OBJECT_FILE_DIR = CMakeFiles\TennisStarWars.dir
+
+build CMakeFiles/TennisStarWars.dir/naveimperial.cpp.obj: CXX_COMPILER__TennisStarWars_unscanned_Debug C$:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.cpp || cmake_object_order_depends_target_TennisStarWars
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TennisStarWars.dir\naveimperial.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.2/mingw_64/include/QtGui -isystem C:/Qt/6.10.2/mingw_64/include/QtMultimedia -isystem C:/Qt/6.10.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\TennisStarWars.dir
+  OBJECT_FILE_DIR = CMakeFiles\TennisStarWars.dir
+
+build CMakeFiles/TennisStarWars.dir/marcador.cpp.obj: CXX_COMPILER__TennisStarWars_unscanned_Debug C$:/Users/defaultuser0/Documents/TennisStarWars/marcador.cpp || cmake_object_order_depends_target_TennisStarWars
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TennisStarWars.dir\marcador.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.2/mingw_64/include/QtGui -isystem C:/Qt/6.10.2/mingw_64/include/QtMultimedia -isystem C:/Qt/6.10.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\TennisStarWars.dir
+  OBJECT_FILE_DIR = CMakeFiles\TennisStarWars.dir
+
+build CMakeFiles/TennisStarWars.dir/obstaculo.cpp.obj: CXX_COMPILER__TennisStarWars_unscanned_Debug C$:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.cpp || cmake_object_order_depends_target_TennisStarWars
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_MULTIMEDIA_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\TennisStarWars.dir\obstaculo.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/include -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.2/mingw_64/include/QtGui -isystem C:/Qt/6.10.2/mingw_64/include/QtMultimedia -isystem C:/Qt/6.10.2/mingw_64/include/QtNetwork
+  OBJECT_DIR = CMakeFiles\TennisStarWars.dir
+  OBJECT_FILE_DIR = CMakeFiles\TennisStarWars.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TennisStarWars
@@ -81,7 +121,7 @@ build CMakeFiles/TennisStarWars.dir/mainwindow.cpp.obj: CXX_COMPILER__TennisStar
 #############################################
 # Link the executable TennisStarWars.exe
 
-build TennisStarWars.exe: CXX_EXECUTABLE_LINKER__TennisStarWars_Debug CMakeFiles/TennisStarWars.dir/TennisStarWars_autogen/mocs_compilation.cpp.obj CMakeFiles/TennisStarWars.dir/main.cpp.obj CMakeFiles/TennisStarWars.dir/mainwindow.cpp.obj | C$:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Multimedia.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a || TennisStarWars_autogen TennisStarWars_autogen_timestamp_deps
+build TennisStarWars.exe: CXX_EXECUTABLE_LINKER__TennisStarWars_Debug CMakeFiles/TennisStarWars.dir/TennisStarWars_autogen/mocs_compilation.cpp.obj CMakeFiles/TennisStarWars.dir/main.cpp.obj CMakeFiles/TennisStarWars.dir/mainwindow.cpp.obj CMakeFiles/TennisStarWars.dir/pelota.cpp.obj CMakeFiles/TennisStarWars.dir/naverebelde.cpp.obj CMakeFiles/TennisStarWars.dir/naveimperial.cpp.obj CMakeFiles/TennisStarWars.dir/marcador.cpp.obj CMakeFiles/TennisStarWars.dir/obstaculo.cpp.obj | C$:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Multimedia.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Network.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a || TennisStarWars_autogen TennisStarWars_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a  C:/Qt/6.10.2/mingw_64/lib/libQt6Multimedia.a  C:/Qt/6.10.2/mingw_64/lib/libQt6Gui.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  C:/Qt/6.10.2/mingw_64/lib/libQt6Network.a  -lws2_32  C:/Qt/6.10.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

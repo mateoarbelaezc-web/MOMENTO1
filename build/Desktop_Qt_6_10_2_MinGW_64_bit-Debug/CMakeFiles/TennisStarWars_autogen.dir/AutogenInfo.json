@@ -388,6 +388,36 @@
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/marcador.h",
+			"MU",
+			"EWIEGA46WW/moc_marcador.cpp",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.h",
+			"MU",
+			"EWIEGA46WW/moc_naveimperial.cpp",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.h",
+			"MU",
+			"EWIEGA46WW/moc_naverebelde.cpp",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.h",
+			"MU",
+			"EWIEGA46WW/moc_obstaculo.cpp",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h",
+			"MU",
+			"EWIEGA46WW/moc_pelota.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -468,6 +498,31 @@
 		[ "C:/Users/defaultuser0/Documents/TennisStarWars/main.cpp", "MU", null ],
 		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/marcador.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/pelota.cpp",
 			"MU",
 			null
 		]

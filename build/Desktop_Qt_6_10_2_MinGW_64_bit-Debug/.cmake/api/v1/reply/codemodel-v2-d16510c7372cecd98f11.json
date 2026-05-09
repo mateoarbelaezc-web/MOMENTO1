@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-a443642ccb81af0c00f2.json",
+					"jsonFile" : "directory-.-Debug-55fa8af5208ea5c32e65.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TennisStarWars::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TennisStarWars-Debug-dd61e4488d5b769eaf4f.json",
+					"jsonFile" : "target-TennisStarWars-Debug-f6bce86bd1eb160b8372.json",
 					"name" : "TennisStarWars",
 					"projectIndex" : 0
 				},
