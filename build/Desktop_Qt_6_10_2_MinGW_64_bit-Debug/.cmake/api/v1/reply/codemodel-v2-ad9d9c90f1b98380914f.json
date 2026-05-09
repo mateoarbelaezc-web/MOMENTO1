@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-a0a3b926bc995d38983a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TennisStarWars",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TennisStarWars::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TennisStarWars-Debug-54968d8c5a4b55212e8b.json",
+					"name" : "TennisStarWars",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TennisStarWars_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TennisStarWars_autogen-Debug-23e9ce92f7b5430c009e.json",
+					"name" : "TennisStarWars_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TennisStarWars_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TennisStarWars_autogen_timestamp_deps-Debug-d05d31eb1e2fe1c60d1d.json",
+					"name" : "TennisStarWars_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug",
+		"source" : "C:/Users/defaultuser0/Documents/TennisStarWars"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

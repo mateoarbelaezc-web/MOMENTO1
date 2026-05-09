@@ -1,0 +1,9 @@
+# ninja log v6
+28	746	8000463553173513	TennisStarWars_autogen/timestamp	5e254f522922926f
+28	746	8000463553173513	TennisStarWars_autogen/mocs_compilation.cpp	5e254f522922926f
+28	746	8000463553173513	C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/timestamp	5e254f522922926f
+28	746	8000463553173513	C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/mocs_compilation.cpp	5e254f522922926f
+755	2926	8000463554013498	CMakeFiles/TennisStarWars.dir/main.cpp.obj	5436db2bb5c94fe7
+759	2934	8000463554053523	CMakeFiles/TennisStarWars.dir/mainwindow.cpp.obj	cccd4208149d084b
+751	2935	8000463553973529	CMakeFiles/TennisStarWars.dir/TennisStarWars_autogen/mocs_compilation.cpp.obj	deda0676dd1e8236
+2935	3482	8000463575809898	TennisStarWars.exe	1d9147ec6d4f2c02
