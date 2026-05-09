@@ -146,6 +146,7 @@ TennisStarWars_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
 	C:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QKeyEvent \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
@@ -190,6 +191,7 @@ TennisStarWars_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsItem \
+	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsView \
@@ -660,11 +662,17 @@ TennisStarWars_autogen/timestamp: \
 	C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/moc_predefs.h \
+	C:/Users/defaultuser0/Documents/TennisStarWars/dificultad.cpp \
+	C:/Users/defaultuser0/Documents/TennisStarWars/dificultad.h \
+	C:/Users/defaultuser0/Documents/TennisStarWars/fisicamotor.cpp \
+	C:/Users/defaultuser0/Documents/TennisStarWars/fisicamotor.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/main.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/mainwindow.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/mainwindow.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/marcador.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/marcador.h \
+	C:/Users/defaultuser0/Documents/TennisStarWars/menudificultad.cpp \
+	C:/Users/defaultuser0/Documents/TennisStarWars/menudificultad.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.cpp \

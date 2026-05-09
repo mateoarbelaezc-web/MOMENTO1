@@ -28,6 +28,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         naveimperial.h naveimperial.cpp
         marcador.h marcador.cpp
         obstaculo.h obstaculo.cpp
+        fisicamotor.h fisicamotor.cpp
+        dificultad.h dificultad.cpp
+        menudificultad.h menudificultad.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TennisStarWars APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -1,13 +1,13 @@
 #include "obstaculo.h"
 
-Obstaculo::Obstaculo() {
+Obstaculo::Obstaculo(float vel) {
     ancho = 20.0f;
-    alto = 150.0f;
-    velY = 3.0f;
+    alto = 250.0f;
+    velY = vel;
     limSuperior = 50.0f;
     limInferior = 400.0f;
     esMovil = true;
-    setPos(390, 200); // centro de la pantalla
+    setPos(390, 200);
 }
 
 QRectF Obstaculo::boundingRect() const {

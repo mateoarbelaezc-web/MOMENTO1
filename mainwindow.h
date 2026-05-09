@@ -11,6 +11,10 @@
 #include "naveimperial.h"
 #include "marcador.h"
 #include "obstaculo.h"
+#include "fisicamotor.h"
+#include "dificultad.h"
+#include "menudificultad.h"
+#include <QMouseEvent>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -18,6 +22,7 @@ public:
     MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
     bool eventFilter(QObject* obj, QEvent* event) override;
+    void mousePressEvent(QMouseEvent* event) override;
 
 private slots:
     void actualizar();
@@ -33,6 +38,11 @@ private:
     bool teclaArriba;
     bool teclaAbajo;
     Obstaculo* obstaculo;
+    FisicaMotor* fisicaMotor;
+    Dificultad* dificultad;
+    MenuDificultad* menu;
+    bool juegoIniciado;
+    void iniciarJuego();
 };
 
 #endif

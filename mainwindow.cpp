@@ -4,6 +4,7 @@
 #include <QFont>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
+
     escena = new QGraphicsScene(this);
     escena->setSceneRect(0, 0, 800, 600);
     escena->setBackgroundBrush(Qt::black);
@@ -16,31 +17,74 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     setCentralWidget(vista);
     setWindowTitle("Tenis Star Wars");
 
+    // Inicializar punteros en null
+    dificultad = nullptr;
+    pelota = nullptr;
+    naveRebelde = nullptr;
+    naveImperial = nullptr;
+    obstaculo = nullptr;
+    marcador = nullptr;
+    fisicaMotor = nullptr;
+
+    teclaArriba = false;
+    teclaAbajo = false;
+    juegoIniciado = false;
+
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, this, &MainWindow::actualizar);
+
+    vista->installEventFilter(this);
+    vista->setFocusPolicy(Qt::StrongFocus);
+    vista->setFocus();
+
+    menu = new MenuDificultad(escena);
+    menu->mostrar();
+}
+
+void MainWindow::iniciarJuego() {
     pelota = new Pelota();
+    pelota->setVelX(dificultad->getVelBola());
+    pelota->setVelY(dificultad->getVelBola());
     escena->addItem(pelota);
 
     naveRebelde = new NaveRebelde();
     escena->addItem(naveRebelde);
 
-    naveImperial = new NaveImperial(4.0f, 80.0f);
+    naveImperial = new NaveImperial(dificultad->getVelEnemigo(), dificultad->getMargenError());
     escena->addItem(naveImperial);
 
-    obstaculo = new Obstaculo();
+    obstaculo = new Obstaculo(dificultad->getVelObstaculo());
     escena->addItem(obstaculo);
 
-    marcador = new Marcador();
+    marcador = new Marcador(dificultad->getGamesParaGanar());
     escena->addItem(marcador);
 
-    teclaArriba = false;
-    teclaAbajo = false;
+    fisicaMotor = new FisicaMotor();
 
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &MainWindow::actualizar);
     timer->start(16);
+}
 
-    vista->installEventFilter(this);
-    vista->setFocusPolicy(Qt::StrongFocus);
-    vista->setFocus();
+MainWindow::~MainWindow() {}
+
+void MainWindow::mousePressEvent(QMouseEvent* event) {
+    if (!juegoIniciado) {
+        QPointF pos = vista->mapToScene(event->pos());
+        try {
+            if (menu->clicEnFacil(pos)) {
+                dificultad = new Dificultad(1);
+                menu->ocultar();
+                juegoIniciado = true;
+                iniciarJuego();
+            } else if (menu->clicEnDificil(pos)) {
+                dificultad = new Dificultad(2);
+                menu->ocultar();
+                juegoIniciado = true;
+                iniciarJuego();
+            }
+        } catch (const std::invalid_argument& e) {
+            qDebug() << "Error de dificultad:" << e.what();
+        }
+    }
 }
 
 bool MainWindow::eventFilter(QObject* obj, QEvent* event) {
@@ -65,27 +109,24 @@ void MainWindow::actualizar() {
     escena->update();
     pelota->mover();
 
-    // Rebotar en bordes superior e inferior
-    if (pelota->y() <= 0 || pelota->y() >= 590)
+    if (pelota->y() <= 8 || pelota->y() >= 570)
         pelota->setVelY(-pelota->getVelY());
 
-    // Colision con NaveRebelde
     if (pelota->collidesWithItem(naveRebelde)) {
         pelota->setVelX(qAbs(pelota->getVelX()));
+        fisicaMotor->aplicarAnguloImpacto(pelota, naveRebelde->y(), 80.0f);
     }
 
-    // Colision con NaveImperial
     if (pelota->collidesWithItem(naveImperial)) {
         pelota->setVelX(-qAbs(pelota->getVelX()));
+        fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), 80.0f);
     }
 
-    // Colision con obstaculo
     if (pelota->collidesWithItem(obstaculo)) {
         float desvio = ((rand() % 400) - 200) / 100.0f;
         pelota->setVelY(pelota->getVelY() + desvio);
     }
 
-    // Pelota sale por la izquierda (punto Imperio)
     if (pelota->x() <= 0) {
         if (marcador->getEnTieBreak())
             marcador->anotarTieImperio();
@@ -93,9 +134,6 @@ void MainWindow::actualizar() {
             marcador->anotarImperio();
         if (marcador->hayGanador()) {
             timer->stop();
-            qDebug() << "Ganador:" << marcador->ganador();
-            qDebug() << "Sets jugador:" << marcador->getSetsJugador();
-            qDebug() << "Sets Imperio:" << marcador->getSetsImperio();
             QGraphicsTextItem* fin = new QGraphicsTextItem(marcador->ganador());
             fin->setDefaultTextColor(Qt::yellow);
             fin->setFont(QFont("Arial", 30, QFont::Bold));
@@ -105,8 +143,8 @@ void MainWindow::actualizar() {
             escena->update();
         } else {
             pelota->setPos(400, 300);
-            pelota->setVelX(5.0f);
-            pelota->setVelY(5.0f);
+            pelota->setVelX(dificultad->getVelBola());
+            pelota->setVelY(dificultad->getVelBola());
         }
     }
 
@@ -117,9 +155,6 @@ void MainWindow::actualizar() {
             marcador->anotarJugador();
         if (marcador->hayGanador()) {
             timer->stop();
-            qDebug() << "Ganador:" << marcador->ganador();
-            qDebug() << "Sets jugador:" << marcador->getSetsJugador();
-            qDebug() << "Sets Imperio:" << marcador->getSetsImperio();
             QGraphicsTextItem* fin = new QGraphicsTextItem(marcador->ganador());
             fin->setDefaultTextColor(Qt::yellow);
             fin->setFont(QFont("Arial", 30, QFont::Bold));
@@ -129,8 +164,8 @@ void MainWindow::actualizar() {
             escena->update();
         } else {
             pelota->setPos(400, 300);
-            pelota->setVelX(-5.0f);
-            pelota->setVelY(5.0f);
+            pelota->setVelX(-dificultad->getVelBola());
+            pelota->setVelY(dificultad->getVelBola());
         }
     }
 
@@ -139,6 +174,3 @@ void MainWindow::actualizar() {
     naveImperial->seguirPelota(pelota);
     obstaculo->moverVertical();
 }
-
-
-MainWindow::~MainWindow() {}

@@ -22,8 +22,8 @@ void NaveImperial::seguirPelota(Pelota* pelota) {
     float error = (rand() % 100) / 100.0f * margenError;
     float objetivo = pelota->y() + error;
 
-    if (y() + alto / 2 < objetivo)
+    if (y() + alto / 2 < objetivo && y() + alto < 600)
         setPos(x(), y() + velocidadIA);
-    else if (y() + alto / 2 > objetivo)
+    else if (y() + alto / 2 > objetivo && y() > 0)
         setPos(x(), y() - velocidadIA);
 }

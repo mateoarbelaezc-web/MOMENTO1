@@ -21,6 +21,6 @@ void NaveRebelde::moverArriba() {
 }
 
 void NaveRebelde::moverAbajo() {
-    if (y() + alto < 600)
+    if (y() + alto < 595)
         setPos(x(), y() + 6);
 }

@@ -384,6 +384,18 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/dificultad.h",
+			"MU",
+			"EWIEGA46WW/moc_dificultad.cpp",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/fisicamotor.h",
+			"MU",
+			"EWIEGA46WW/moc_fisicamotor.cpp",
+			null
+		],
+		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -393,6 +405,12 @@
 			"C:/Users/defaultuser0/Documents/TennisStarWars/marcador.h",
 			"MU",
 			"EWIEGA46WW/moc_marcador.cpp",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/menudificultad.h",
+			"MU",
+			"EWIEGA46WW/moc_menudificultad.cpp",
 			null
 		],
 		[
@@ -495,6 +513,16 @@
 	"SETTINGS_FILE" : "C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/TennisStarWars_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/dificultad.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/fisicamotor.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Users/defaultuser0/Documents/TennisStarWars/main.cpp", "MU", null ],
 		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/mainwindow.cpp",
@@ -503,6 +531,11 @@
 		],
 		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/marcador.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/menudificultad.cpp",
 			"MU",
 			null
 		],

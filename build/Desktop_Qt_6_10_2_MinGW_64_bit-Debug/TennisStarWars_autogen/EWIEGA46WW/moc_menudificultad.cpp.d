@@ -1,12 +1,6 @@
-C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/defaultuser0/Documents/TennisStarWars/mainwindow.h \
+C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/EWIEGA46WW/moc_menudificultad.cpp: C:/Users/defaultuser0/Documents/TennisStarWars/menudificultad.h \
   C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/TennisStarWars_autogen/moc_predefs.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/QList \
   C:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/QString \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/QTimer \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
@@ -15,7 +9,6 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q23type_traits.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qalloc.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qanystringview.h \
@@ -26,7 +19,6 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/qatomic.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qatomic_cxx11.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qbasicatomic.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qbindingstorage.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearray.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
@@ -44,15 +36,10 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/qcontainerinfo.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qcontainertools_impl.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qcontiguouscache.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qexceptionhandling.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qflags.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qfloat16.h \
@@ -64,14 +51,12 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/qglobalstatic.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qhashfunctions.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qiodevicebase.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qline.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qmalloc.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qmap.h \
@@ -81,7 +66,6 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/qmetatype.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qminmax.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qnamespace.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qnumeric.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qobject_impl.h \
@@ -128,7 +112,6 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtenvironmentvariables.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtextstream.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtformat_impl.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qtimer.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtmetamacros.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtnoop.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtpreprocessorsupport.h \
@@ -139,77 +122,39 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtversionchecks.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtypeinfo.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qtypes.h \
-  C:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qutf8stringview.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qvarlengtharray.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/QKeyEvent \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qfont.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qfontinfo.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qfontvariableaxis.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpainterpath.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qpalette.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qpointingdevice.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qvector2d.h \
-  C:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsItem \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsTextItem \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsView \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsview.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollarea.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
-  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
   C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/atomic \
@@ -422,12 +367,4 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/dificultad.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/fisicamotor.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/marcador.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/menudificultad.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.h \
-  C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h

@@ -1,7 +1,8 @@
 #include "marcador.h"
 #include <QDebug>
 
-Marcador::Marcador() {
+Marcador::Marcador(int gamesParaGanar) {
+    this->gamesParaGanar = gamesParaGanar;
     puntosJugador = 0;
     puntosImperio = 0;
     gamesJugador = 0;
@@ -79,11 +80,11 @@ void Marcador::ganarJuego(bool jugador) {
     else gamesImperio++;
 
     // verificar tie break
-    if (gamesJugador == 6 && gamesImperio == 6) {
+    if (gamesJugador == gamesParaGanar && gamesImperio == gamesParaGanar) {
         enTieBreak = true;
-    } else if (gamesJugador >= 6 && gamesJugador - gamesImperio >= 2) {
+    } else if (gamesJugador >= gamesParaGanar && gamesJugador - gamesImperio >= 2) {
         ganarSet(true);
-    } else if (gamesImperio >= 6 && gamesImperio - gamesJugador >= 2) {
+    } else if (gamesImperio >= gamesParaGanar && gamesImperio - gamesJugador >= 2) {
         ganarSet(false);
     }
 }

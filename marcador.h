@@ -6,7 +6,7 @@
 
 class Marcador : public QGraphicsTextItem {
 public:
-    Marcador();
+    Marcador(int gamesParaGanar);
     void anotarJugador();
     void anotarImperio();
     void actualizar();
@@ -43,6 +43,8 @@ private:
     bool enTieBreak;
     int puntosTieJugador;
     int puntosTieImperio;
+
+    int gamesParaGanar;
 };
 
 #endif
