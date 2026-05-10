@@ -4,11 +4,6 @@
 MenuDificultad::MenuDificultad(QGraphicsScene* escena) {
     this->escena = escena;
 
-    titulo = new QGraphicsTextItem("TENIS STAR WARS");
-    titulo->setDefaultTextColor(Qt::yellow);
-    titulo->setFont(QFont("Arial", 30, QFont::Bold));
-    titulo->setPos(180, 100);
-
     botonFacil = new QGraphicsRectItem(250, 250, 120, 50);
     botonFacil->setBrush(Qt::darkGreen);
     textoFacil = new QGraphicsTextItem("FACIL");
@@ -23,7 +18,6 @@ MenuDificultad::MenuDificultad(QGraphicsScene* escena) {
     textoDificil->setFont(QFont("Arial", 16, QFont::Bold));
     textoDificil->setPos(445, 258);
 
-    escena->addItem(titulo);
     escena->addItem(botonFacil);
     escena->addItem(textoFacil);
     escena->addItem(botonDificil);
@@ -31,7 +25,6 @@ MenuDificultad::MenuDificultad(QGraphicsScene* escena) {
 }
 
 void MenuDificultad::mostrar() {
-    titulo->setVisible(true);
     botonFacil->setVisible(true);
     textoFacil->setVisible(true);
     botonDificil->setVisible(true);
@@ -39,7 +32,6 @@ void MenuDificultad::mostrar() {
 }
 
 void MenuDificultad::ocultar() {
-    titulo->setVisible(false);
     botonFacil->setVisible(false);
     textoFacil->setVisible(false);
     botonDificil->setVisible(false);

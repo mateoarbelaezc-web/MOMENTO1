@@ -15,6 +15,7 @@
 #include "dificultad.h"
 #include "menudificultad.h"
 #include <QMouseEvent>
+#include "sonidomanager.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -44,6 +45,7 @@ private:
     bool juegoIniciado;
     void iniciarJuego();
     void volverAlMenu();
+    SonidoManager* sonido;
 };
 
 #endif

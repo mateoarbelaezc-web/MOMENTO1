@@ -5,5 +5,13 @@
         <file>assets/tiefighter.png</file>
         <file>assets/xwing.png</file>
         <file>assets/fondo.png</file>
+        <file>assets/punto.wav</file>
+        <file>assets/musica_menu.mp3</file>
+        <file>assets/musica_facil.mp3</file>
+        <file>assets/musica_dificil.mp3</file>
+        <file>assets/golpe.wav</file>
+        <file>assets/fondo_menu.png</file>
+        <file>assets/victoria_imperio.png</file>
+        <file>assets/victoria_rebelde.png</file>
     </qresource>
 </RCC>

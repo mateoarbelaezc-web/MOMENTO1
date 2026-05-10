@@ -4,13 +4,13 @@
 #include <QFont>
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
-
+    sonido = new SonidoManager();
+    sonido->reproducirMusica("qrc:/assets/musica_menu.mp3");
     escena = new QGraphicsScene(this);
     escena->setSceneRect(0, 0, 800, 600);
-    QPixmap fondoImg(":/assets/fondo.png");
-    qDebug() << "Fondo cargado:" << !fondoImg.isNull();
-    fondoImg = fondoImg.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
-    escena->setBackgroundBrush(fondoImg);
+    QPixmap fondoMenu(":/assets/fondo_menu.png");
+    fondoMenu = fondoMenu.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    escena->setBackgroundBrush(fondoMenu);
 
 
     vista = new QGraphicsView(escena, this);
@@ -46,6 +46,14 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 }
 
 void MainWindow::iniciarJuego() {
+    sonido->detenerMusica();
+    if (dificultad->getNivel() == 1)
+        sonido->reproducirMusica("qrc:/assets/musica_facil.mp3");
+    else
+        sonido->reproducirMusica("qrc:/assets/musica_dificil.mp3");
+    QPixmap fondoJuego(":/assets/fondo.png");
+    fondoJuego = fondoJuego.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    escena->setBackgroundBrush(fondoJuego);
     pelota = new Pelota();
     pelota->setVelX(dificultad->getVelBola());
     pelota->setVelY(dificultad->getVelBola());
@@ -118,12 +126,14 @@ void MainWindow::actualizar() {
         pelota->setVelY(-pelota->getVelY());
 
     if (pelota->collidesWithItem(naveRebelde)) {
+        sonido->reproducirEfecto("qrc:/assets/golpe.wav");
         pelota->setVelX(qAbs(pelota->getVelX()));
         fisicaMotor->aplicarAnguloImpacto(pelota, naveRebelde->y(), naveRebelde->boundingRect().height(), dificultad->getVelBola());
         if (pelota->getVelY() > 3.0f) pelota->setVelY(-pelota->getVelY());
     }
 
     if (pelota->collidesWithItem(naveImperial)) {
+        sonido->reproducirEfecto("qrc:/assets/golpe.wav");
         pelota->setVelX(-qAbs(pelota->getVelX()));
         fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), naveImperial->boundingRect().height(), dificultad->getVelBola());
         if (pelota->getVelY() > 3.0f) pelota->setVelY(-pelota->getVelY());
@@ -136,18 +146,23 @@ void MainWindow::actualizar() {
     }
 
     if (pelota->x() <= 0) {
-        if (marcador->getEnTieBreak())
+        if (marcador->getEnTieBreak()) {
             marcador->anotarTieImperio();
-        else
+            sonido->reproducirEfecto("qrc:/assets/punto.wav");
+        } else {
             marcador->anotarImperio();
+            sonido->reproducirEfecto("qrc:/assets/punto.wav");
+        }
         if (marcador->hayGanador()) {
             timer->stop();
-            QGraphicsTextItem* fin = new QGraphicsTextItem(marcador->ganador());
-            fin->setDefaultTextColor(Qt::yellow);
-            fin->setFont(QFont("Arial", 30, QFont::Bold));
-            fin->setPos(150, 280);
-            fin->setZValue(10);
-            escena->addItem(fin);
+            escena->clear(); // limpia todos los sprites
+            QPixmap imgVictoria;
+            if (marcador->getSetsJugador() >= 1)
+                imgVictoria = QPixmap(":/assets/victoria_rebelde.png");
+            else
+                imgVictoria = QPixmap(":/assets/victoria_imperio.png");
+            imgVictoria = imgVictoria.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            escena->setBackgroundBrush(imgVictoria);
             escena->update();
         } else {
             pelota->setPos(400, 300);
@@ -157,18 +172,23 @@ void MainWindow::actualizar() {
     }
 
     if (pelota->x() >= 790) {
-        if (marcador->getEnTieBreak())
+        if (marcador->getEnTieBreak()) {
             marcador->anotarTieJugador();
-        else
+            sonido->reproducirEfecto("qrc:/assets/punto.wav");
+        } else {
             marcador->anotarJugador();
+            sonido->reproducirEfecto("qrc:/assets/punto.wav");
+        }
         if (marcador->hayGanador()) {
             timer->stop();
-            QGraphicsTextItem* fin = new QGraphicsTextItem(marcador->ganador());
-            fin->setDefaultTextColor(Qt::yellow);
-            fin->setFont(QFont("Arial", 30, QFont::Bold));
-            fin->setPos(150, 280);
-            fin->setZValue(10);
-            escena->addItem(fin);
+            escena->clear(); // limpia todos los sprites
+            QPixmap imgVictoria;
+            if (marcador->getSetsJugador() >= 1)
+                imgVictoria = QPixmap(":/assets/victoria_rebelde.png");
+            else
+                imgVictoria = QPixmap(":/assets/victoria_imperio.png");
+            imgVictoria = imgVictoria.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+            escena->setBackgroundBrush(imgVictoria);
             escena->update();
         } else {
             pelota->setPos(400, 300);
@@ -195,6 +215,13 @@ void MainWindow::volverAlMenu() {
     marcador = nullptr;
     fisicaMotor = nullptr;
     dificultad = nullptr;
+
+    // Poner el fondo DESPUÉS de clear()
+    sonido->detenerMusica();
+    sonido->reproducirMusica("qrc:/assets/musica_menu.mp3");
+    QPixmap fondoMenu(":/assets/fondo_menu.png");
+    fondoMenu = fondoMenu.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    escena->setBackgroundBrush(fondoMenu);
 
     menu = new MenuDificultad(escena);
     menu->mostrar();

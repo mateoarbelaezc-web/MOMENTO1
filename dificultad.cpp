@@ -11,14 +11,14 @@ Dificultad::Dificultad(int nivel) {
 
     if (nivel == 1) {
         velBola = 6.0f;
-        velEnemigo = 2.5f;
-        margenError = 90.0f;
+        velEnemigo = 3.0f;
+        margenError = 80.5f;
         gamesParaGanar = 2;
         velObstaculo = 4.5f;
     } else {
         velBola = 8.5f;
         velEnemigo = 4.0f;
-        margenError = 75.0f;
+        margenError = 70.0f;
         gamesParaGanar = 3;
         velObstaculo = 7.0f;
     }

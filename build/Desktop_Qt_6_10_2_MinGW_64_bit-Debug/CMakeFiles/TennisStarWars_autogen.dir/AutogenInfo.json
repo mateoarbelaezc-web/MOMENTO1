@@ -437,6 +437,12 @@
 			"MU",
 			"EWIEGA46WW/moc_pelota.cpp",
 			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/sonidomanager.h",
+			"MU",
+			"EWIEGA46WW/moc_sonidomanager.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -557,6 +563,11 @@
 		],
 		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/pelota.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/sonidomanager.cpp",
 			"MU",
 			null
 		]

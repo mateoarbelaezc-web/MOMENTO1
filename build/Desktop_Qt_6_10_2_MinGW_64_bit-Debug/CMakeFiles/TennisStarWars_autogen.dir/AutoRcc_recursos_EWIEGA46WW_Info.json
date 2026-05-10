@@ -10,10 +10,18 @@
 	"INPUTS" : 
 	[
 		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/tiefighter.png",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/punto.wav",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/victoria_rebelde.png",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/fondo_menu.png",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/musica_facil.mp3",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/golpe.wav",
 		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/asteroides.png",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/musica_dificil.mp3",
 		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/fondo.png",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/musica_menu.mp3",
 		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/pelota.png",
-		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/xwing.png"
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/xwing.png",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/assets/victoria_imperio.png"
 	],
 	"LOCK_FILE" : "C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/CMakeFiles/TennisStarWars_autogen.dir/AutoRcc_recursos_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,

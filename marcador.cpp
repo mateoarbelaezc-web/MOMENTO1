@@ -1,5 +1,6 @@
 #include "marcador.h"
 #include <QDebug>
+#include <QFont>
 
 Marcador::Marcador(int gamesParaGanar) {
     this->gamesParaGanar = gamesParaGanar;
@@ -15,7 +16,8 @@ Marcador::Marcador(int gamesParaGanar) {
     enTieBreak = false;
     puntosTieJugador = 0;
     puntosTieImperio = 0;
-    setDefaultTextColor(Qt::white);
+    setDefaultTextColor(Qt::yellow);
+    setFont(QFont("Arial", 14, QFont::Bold));
     setPos(250, 10);
     actualizar();
 }

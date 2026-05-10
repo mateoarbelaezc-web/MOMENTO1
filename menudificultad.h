@@ -17,7 +17,6 @@ public:
 
 private:
     QGraphicsScene* escena;
-    QGraphicsTextItem* titulo;
     QGraphicsRectItem* botonFacil;
     QGraphicsRectItem* botonDificil;
     QGraphicsTextItem* textoFacil;

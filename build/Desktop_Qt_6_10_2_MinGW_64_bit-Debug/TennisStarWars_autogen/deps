@@ -191,6 +191,15 @@ TennisStarWars_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QAudioOutput \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QMediaPlayer \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qaudio.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtaudio.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimediaglobal.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsItem \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsRectItem \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
@@ -683,4 +692,6 @@ TennisStarWars_autogen/timestamp: \
 	C:/Users/defaultuser0/Documents/TennisStarWars/pelota.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/recursos.qrc \
+	C:/Users/defaultuser0/Documents/TennisStarWars/sonidomanager.cpp \
+	C:/Users/defaultuser0/Documents/TennisStarWars/sonidomanager.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe
