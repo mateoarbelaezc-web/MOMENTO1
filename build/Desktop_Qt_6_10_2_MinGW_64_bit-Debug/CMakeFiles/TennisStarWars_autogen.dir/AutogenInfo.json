@@ -375,7 +375,8 @@
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
-		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake",
+		"C:/Users/defaultuser0/Documents/TennisStarWars/recursos.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/defaultuser0/Documents/TennisStarWars",
 	"CROSS_CONFIG" : false,

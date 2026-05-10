@@ -2,6 +2,8 @@
 #define OBSTACULO_H
 #include <QGraphicsItem>
 #include <QPainter>
+#include <QPixmap>
+
 class Obstaculo : public QGraphicsItem {
 public:
     Obstaculo();
@@ -16,5 +18,6 @@ private:
     float limSuperior;
     float limInferior;
     bool esMovil;
+    QPixmap sprite;
 };
 #endif

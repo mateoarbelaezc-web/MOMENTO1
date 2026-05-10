@@ -17,6 +17,7 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        recursos.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -31,6 +32,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         fisicamotor.h fisicamotor.cpp
         dificultad.h dificultad.cpp
         menudificultad.h menudificultad.cpp
+        recursos.qrc
 
     )
 # Define target properties for Android with Qt 6 as:

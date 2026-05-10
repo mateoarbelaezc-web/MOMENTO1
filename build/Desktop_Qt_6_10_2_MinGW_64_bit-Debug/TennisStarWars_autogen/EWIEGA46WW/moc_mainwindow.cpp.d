@@ -149,6 +149,7 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtGui/QKeyEvent \
   C:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   C:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
+  C:/Qt/6.10.2/mingw_64/include/QtGui/QPixmap \
   C:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \

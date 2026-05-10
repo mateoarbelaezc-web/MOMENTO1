@@ -7,7 +7,11 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 
     escena = new QGraphicsScene(this);
     escena->setSceneRect(0, 0, 800, 600);
-    escena->setBackgroundBrush(Qt::black);
+    QPixmap fondoImg(":/assets/fondo.png");
+    qDebug() << "Fondo cargado:" << !fondoImg.isNull();
+    fondoImg = fondoImg.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+    escena->setBackgroundBrush(fondoImg);
+
 
     vista = new QGraphicsView(escena, this);
     vista->setFixedSize(806, 606);
@@ -115,12 +119,14 @@ void MainWindow::actualizar() {
 
     if (pelota->collidesWithItem(naveRebelde)) {
         pelota->setVelX(qAbs(pelota->getVelX()));
-        fisicaMotor->aplicarAnguloImpacto(pelota, naveRebelde->y(), 80.0f, dificultad->getVelBola());
+        fisicaMotor->aplicarAnguloImpacto(pelota, naveRebelde->y(), naveRebelde->boundingRect().height(), dificultad->getVelBola());
+        if (pelota->getVelY() > 3.0f) pelota->setVelY(-pelota->getVelY());
     }
 
     if (pelota->collidesWithItem(naveImperial)) {
         pelota->setVelX(-qAbs(pelota->getVelX()));
-        fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), 80.0f, dificultad->getVelBola());
+        fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), naveImperial->boundingRect().height(), dificultad->getVelBola());
+        if (pelota->getVelY() > 3.0f) pelota->setVelY(-pelota->getVelY());
     }
 
     if (pelota->collidesWithItem(obstaculo)) {

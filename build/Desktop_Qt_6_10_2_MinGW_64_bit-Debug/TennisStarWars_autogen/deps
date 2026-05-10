@@ -148,6 +148,7 @@ TennisStarWars_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QKeyEvent \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
+	C:/Qt/6.10.2/mingw_64/include/QtGui/QPixmap \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
@@ -681,4 +682,5 @@ TennisStarWars_autogen/timestamp: \
 	C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/pelota.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h \
+	C:/Users/defaultuser0/Documents/TennisStarWars/recursos.qrc \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

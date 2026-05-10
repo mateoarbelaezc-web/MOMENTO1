@@ -3,6 +3,7 @@
 
 #include <QGraphicsItem>
 #include <QPainter>
+#include <QPixmap>
 
 class Pelota : public QGraphicsItem {
 public:
@@ -15,11 +16,13 @@ public:
     float getVelY() const;
     void setVelX(float vx);
     void setVelY(float vy);
+    QPainterPath shape() const override;
 
 private:
     float velX;
     float velY;
     float radio;
+    QPixmap sprite;
 };
 
 #endif

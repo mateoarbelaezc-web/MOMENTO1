@@ -1,13 +1,15 @@
 #include "obstaculo.h"
 
 Obstaculo::Obstaculo(float vel) {
-    ancho = 20.0f;
-    alto = 250.0f;
+    ancho = 150.0f;
+    alto = 400.0f;
     velY = vel;
     limSuperior = 10.0f;
-    limInferior = 350.0f;
+    limInferior = 200.0f;
     esMovil = true;
-    setPos(390, 200);
+    sprite = QPixmap(":/assets/asteroides.png");
+    sprite = sprite.scaled(150, 400, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    setPos(370, 100);
 }
 
 QRectF Obstaculo::boundingRect() const {
@@ -15,8 +17,12 @@ QRectF Obstaculo::boundingRect() const {
 }
 
 void Obstaculo::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
-    painter->setBrush(Qt::gray);
-    painter->drawRect(boundingRect());
+    if (!sprite.isNull())
+        painter->drawPixmap(0, 0, sprite);
+    else {
+        painter->setBrush(Qt::gray);
+        painter->drawRect(boundingRect());
+    }
 }
 
 void Obstaculo::moverVertical() {

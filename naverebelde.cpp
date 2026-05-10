@@ -1,18 +1,33 @@
 #include "naverebelde.h"
 
 NaveRebelde::NaveRebelde() {
-    ancho = 15.0f;
-    alto = 80.0f;
-    setPos(30, 260); // lado izquierdo de la pantalla
+    ancho = 110.0f;
+    alto = 130.0f;
+    sprite = QPixmap(":/assets/xwing.png");
+    sprite = sprite.scaled(110, 130, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    setPos(30, 260);
 }
 
 QRectF NaveRebelde::boundingRect() const {
-    return QRectF(0, 0, ancho, alto);
+    return QRectF(20, 10, ancho - 40, alto - 20);
 }
 
 void NaveRebelde::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
-    painter->setBrush(Qt::blue);
-    painter->drawRect(boundingRect());
+    if (!sprite.isNull())
+        painter->drawPixmap(0, 0, sprite);
+    else {
+        painter->setBrush(Qt::blue);
+        painter->drawRect(boundingRect());
+    }
+}
+
+QPainterPath NaveRebelde::shape() const {
+    QPainterPath path;
+    // Cuerpo central vertical
+    path.addRect(ancho * 0.35, 0, ancho * 0.30, alto);
+    // Cuerpo horizontal (alas principales)
+    path.addRect(0, alto * 0.35, ancho, alto * 0.30);
+    return path;
 }
 
 void NaveRebelde::moverArriba() {

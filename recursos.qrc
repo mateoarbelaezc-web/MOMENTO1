@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/asteroides.png</file>
+        <file>assets/pelota.png</file>
+        <file>assets/tiefighter.png</file>
+        <file>assets/xwing.png</file>
+        <file>assets/fondo.png</file>
+    </qresource>
+</RCC>

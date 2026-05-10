@@ -5,7 +5,7 @@ FisicaMotor::FisicaMotor() {}
 
 void FisicaMotor::aplicarAnguloImpacto(Pelota* pelota, float yNave, float altoNave, float velocidad) {
     float puntoImpacto = (pelota->y() - yNave) / altoNave;
-    puntoImpacto = qBound(-1.0f, puntoImpacto, 1.0f);
+    puntoImpacto = qBound(-0.8f, puntoImpacto, 0.8f); // limita a 80% del extremo
 
     float angulo = puntoImpacto * 45.0f * M_PI / 180.0f;
 
