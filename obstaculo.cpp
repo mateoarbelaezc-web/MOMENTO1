@@ -8,7 +8,7 @@ Obstaculo::Obstaculo(float vel) {
     limInferior = 200.0f;
     esMovil = true;
     sprite = QPixmap(":/assets/asteroides.png");
-    sprite = sprite.scaled(150, 400, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    sprite = sprite.scaled(80, 400, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     setPos(370, 100);
 }
 

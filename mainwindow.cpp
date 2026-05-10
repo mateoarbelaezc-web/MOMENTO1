@@ -43,6 +43,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
 
     menu = new MenuDificultad(escena);
     menu->mostrar();
+
+    pantallaInstrucciones = new PantallaInstrucciones(escena);
+    enInstrucciones = false;
 }
 
 void MainWindow::iniciarJuego() {
@@ -81,6 +84,14 @@ MainWindow::~MainWindow() {}
 void MainWindow::mousePressEvent(QMouseEvent* event) {
     if (!juegoIniciado) {
         QPointF pos = vista->mapToScene(event->pos());
+        if (enInstrucciones) {
+            if (pantallaInstrucciones->clicEnVolver(pos)) {
+                pantallaInstrucciones->ocultar();
+                enInstrucciones = false;
+                menu->mostrar();
+            }
+            return;
+        }
         try {
             if (menu->clicEnFacil(pos)) {
                 dificultad = new Dificultad(1);
@@ -92,6 +103,10 @@ void MainWindow::mousePressEvent(QMouseEvent* event) {
                 menu->ocultar();
                 juegoIniciado = true;
                 iniciarJuego();
+            } else if (menu->clicEnInstrucciones(pos)) {
+                menu->ocultar();
+                enInstrucciones = true;
+                pantallaInstrucciones->mostrar();
             }
         } catch (const std::invalid_argument& e) {
             qDebug() << "Error de dificultad:" << e.what();
@@ -140,7 +155,8 @@ void MainWindow::actualizar() {
     }
 
     if (pelota->collidesWithItem(obstaculo)) {
-        float rango = (dificultad->getNivel() == 1) ? 400.0f : 850.0f;
+        sonido->reproducirEfecto("qrc:/assets/gravedad.wav");
+        float rango = (dificultad->getNivel() == 1) ? 400.0f : 1200.0f;
         float desvio = ((rand() % (int)rango) - rango/2) / 100.0f;
         pelota->setVelY(pelota->getVelY() + desvio);
     }
@@ -155,7 +171,7 @@ void MainWindow::actualizar() {
         }
         if (marcador->hayGanador()) {
             timer->stop();
-            escena->clear(); // limpia todos los sprites
+            escena->clear();
             QPixmap imgVictoria;
             if (marcador->getSetsJugador() >= 1)
                 imgVictoria = QPixmap(":/assets/victoria_rebelde.png");
@@ -164,6 +180,7 @@ void MainWindow::actualizar() {
             imgVictoria = imgVictoria.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             escena->setBackgroundBrush(imgVictoria);
             escena->update();
+            return; // agregar esto en ambos bloques
         } else {
             pelota->setPos(400, 300);
             pelota->setVelX(dificultad->getVelBola());
@@ -181,7 +198,7 @@ void MainWindow::actualizar() {
         }
         if (marcador->hayGanador()) {
             timer->stop();
-            escena->clear(); // limpia todos los sprites
+            escena->clear();
             QPixmap imgVictoria;
             if (marcador->getSetsJugador() >= 1)
                 imgVictoria = QPixmap(":/assets/victoria_rebelde.png");
@@ -190,6 +207,7 @@ void MainWindow::actualizar() {
             imgVictoria = imgVictoria.scaled(800, 600, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
             escena->setBackgroundBrush(imgVictoria);
             escena->update();
+            return; // agregar esto en ambos bloques
         } else {
             pelota->setPos(400, 300);
             pelota->setVelX(-dificultad->getVelBola());
@@ -225,4 +243,6 @@ void MainWindow::volverAlMenu() {
 
     menu = new MenuDificultad(escena);
     menu->mostrar();
+    pantallaInstrucciones = new PantallaInstrucciones(escena);
+    enInstrucciones = false;
 }

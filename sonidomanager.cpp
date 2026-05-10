@@ -7,17 +7,25 @@ SonidoManager::SonidoManager() {
     musicaOutput->setVolume(0.5f);
     musicaPlayer->setLoops(QMediaPlayer::Infinite);
 
-    efectoPlayer = new QMediaPlayer();
-    efectoOutput = new QAudioOutput();
-    efectoPlayer->setAudioOutput(efectoOutput);
-    efectoOutput->setVolume(0.8f);
+    efectoGolpe = new QSoundEffect();
+    efectoGolpe->setSource(QUrl("qrc:/assets/golpe.wav"));
+    efectoGolpe->setVolume(0.8f);
+
+    efectoPunto = new QSoundEffect();
+    efectoPunto->setSource(QUrl("qrc:/assets/punto.wav"));
+    efectoPunto->setVolume(0.8f);
+
+    efectoGravedad = new QSoundEffect();
+    efectoGravedad->setSource(QUrl("qrc:/assets/gravedad.wav"));
+    efectoGravedad->setVolume(0.8f);
 }
 
 SonidoManager::~SonidoManager() {
     delete musicaPlayer;
     delete musicaOutput;
-    delete efectoPlayer;
-    delete efectoOutput;
+    delete efectoGolpe;
+    delete efectoPunto;
+    delete efectoGravedad;
 }
 
 void SonidoManager::reproducirMusica(QString archivo) {
@@ -30,8 +38,12 @@ void SonidoManager::detenerMusica() {
 }
 
 void SonidoManager::reproducirEfecto(QString archivo) {
-    efectoPlayer->setSource(QUrl(archivo));
-    efectoPlayer->play();
+    if (archivo.contains("golpe"))
+        efectoGolpe->play();
+    else if (archivo.contains("punto"))
+        efectoPunto->play();
+    else if (archivo.contains("gravedad"))
+        efectoGravedad->play();
 }
 
 void SonidoManager::setVolumen(float volumen) {

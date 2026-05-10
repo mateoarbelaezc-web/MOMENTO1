@@ -2,12 +2,12 @@
 #include <cstdlib>
 
 NaveImperial::NaveImperial(float velocidadIA, float margenError) {
-    ancho = 110.0f;
-    alto = 130.0f;
+    ancho = 100.0f;
+    alto = 125.0f;
     this->velocidadIA = velocidadIA;
     this->margenError = margenError;
     sprite = QPixmap(":/assets/tiefighter.png");
-    sprite = sprite.scaled(110, 130, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    sprite = sprite.scaled(100, 125, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     setPos(650, 260);
 }
 

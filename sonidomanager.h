@@ -3,6 +3,7 @@
 
 #include <QMediaPlayer>
 #include <QAudioOutput>
+#include <QSoundEffect>
 #include <QString>
 
 class SonidoManager {
@@ -17,8 +18,9 @@ public:
 private:
     QMediaPlayer* musicaPlayer;
     QAudioOutput* musicaOutput;
-    QMediaPlayer* efectoPlayer;
-    QAudioOutput* efectoOutput;
+    QSoundEffect* efectoGolpe;
+    QSoundEffect* efectoPunto;
+    QSoundEffect* efectoGravedad;
 };
 
 #endif

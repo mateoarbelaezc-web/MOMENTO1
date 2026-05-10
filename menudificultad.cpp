@@ -18,6 +18,16 @@ MenuDificultad::MenuDificultad(QGraphicsScene* escena) {
     textoDificil->setFont(QFont("Arial", 16, QFont::Bold));
     textoDificil->setPos(445, 258);
 
+    botonInstrucciones = new QGraphicsRectItem(300, 320, 200, 50);
+    botonInstrucciones->setBrush(Qt::darkBlue);
+    textoInstrucciones = new QGraphicsTextItem("INSTRUCCIONES");
+    textoInstrucciones->setDefaultTextColor(Qt::white);
+    textoInstrucciones->setFont(QFont("Arial", 14, QFont::Bold));
+    textoInstrucciones->setPos(315, 328);
+
+    escena->addItem(botonInstrucciones);
+    escena->addItem(textoInstrucciones);
+
     escena->addItem(botonFacil);
     escena->addItem(textoFacil);
     escena->addItem(botonDificil);
@@ -29,6 +39,8 @@ void MenuDificultad::mostrar() {
     textoFacil->setVisible(true);
     botonDificil->setVisible(true);
     textoDificil->setVisible(true);
+    botonInstrucciones->setVisible(true);
+    textoInstrucciones->setVisible(true);
 }
 
 void MenuDificultad::ocultar() {
@@ -36,6 +48,8 @@ void MenuDificultad::ocultar() {
     textoFacil->setVisible(false);
     botonDificil->setVisible(false);
     textoDificil->setVisible(false);
+    botonInstrucciones->setVisible(false);
+    textoInstrucciones->setVisible(false);
 }
 
 bool MenuDificultad::clicEnFacil(QPointF pos) {
@@ -44,4 +58,7 @@ bool MenuDificultad::clicEnFacil(QPointF pos) {
 
 bool MenuDificultad::clicEnDificil(QPointF pos) {
     return botonDificil->rect().contains(pos);
+}
+bool MenuDificultad::clicEnInstrucciones(QPointF pos) {
+    return botonInstrucciones->rect().contains(pos);
 }

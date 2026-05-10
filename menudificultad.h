@@ -14,13 +14,16 @@ public:
     void ocultar();
     bool clicEnFacil(QPointF pos);
     bool clicEnDificil(QPointF pos);
+    bool clicEnInstrucciones(QPointF pos);
 
 private:
     QGraphicsScene* escena;
     QGraphicsRectItem* botonFacil;
     QGraphicsRectItem* botonDificil;
+    QGraphicsRectItem* botonInstrucciones;
     QGraphicsTextItem* textoFacil;
     QGraphicsTextItem* textoDificil;
+    QGraphicsTextItem* textoInstrucciones;
 };
 
 #endif

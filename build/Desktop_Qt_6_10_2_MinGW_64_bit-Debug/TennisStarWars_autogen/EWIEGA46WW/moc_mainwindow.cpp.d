@@ -194,9 +194,11 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QAudioOutput \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QMediaPlayer \
+  C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QSoundEffect \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qaudio.h \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
+  C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qsoundeffect.h \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtaudio.h \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
   C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
@@ -440,5 +442,6 @@ C:/Users/defaultuser0/Documents/TennisStarWars/build/Desktop_Qt_6_10_2_MinGW_64_
   C:/Users/defaultuser0/Documents/TennisStarWars/naveimperial.h \
   C:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.h \
   C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.h \
+  C:/Users/defaultuser0/Documents/TennisStarWars/pantallainstrucciones.h \
   C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h \
   C:/Users/defaultuser0/Documents/TennisStarWars/sonidomanager.h

@@ -34,6 +34,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         menudificultad.h menudificultad.cpp
         recursos.qrc
         sonidomanager.h sonidomanager.cpp
+        pantallainstrucciones.h pantallainstrucciones.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

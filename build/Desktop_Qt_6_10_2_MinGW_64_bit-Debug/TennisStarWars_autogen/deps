@@ -193,9 +193,11 @@ TennisStarWars_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QAudioOutput \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QMediaPlayer \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/QSoundEffect \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qaudio.h \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qaudiooutput.h \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qmediaplayer.h \
+	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qsoundeffect.h \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtaudio.h \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimedia-config.h \
 	C:/Qt/6.10.2/mingw_64/include/QtMultimedia/qtmultimediaexports.h \
@@ -689,6 +691,8 @@ TennisStarWars_autogen/timestamp: \
 	C:/Users/defaultuser0/Documents/TennisStarWars/naverebelde.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.h \
+	C:/Users/defaultuser0/Documents/TennisStarWars/pantallainstrucciones.cpp \
+	C:/Users/defaultuser0/Documents/TennisStarWars/pantallainstrucciones.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/pelota.cpp \
 	C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h \
 	C:/Users/defaultuser0/Documents/TennisStarWars/recursos.qrc \

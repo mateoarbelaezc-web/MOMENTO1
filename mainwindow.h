@@ -16,6 +16,7 @@
 #include "menudificultad.h"
 #include <QMouseEvent>
 #include "sonidomanager.h"
+#include "pantallainstrucciones.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -46,6 +47,8 @@ private:
     void iniciarJuego();
     void volverAlMenu();
     SonidoManager* sonido;
+    PantallaInstrucciones* pantallaInstrucciones;
+    bool enInstrucciones;
 };
 
 #endif

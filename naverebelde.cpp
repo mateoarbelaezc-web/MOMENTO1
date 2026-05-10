@@ -1,10 +1,10 @@
 #include "naverebelde.h"
 
 NaveRebelde::NaveRebelde() {
-    ancho = 110.0f;
-    alto = 130.0f;
+    ancho = 100.0f;
+    alto = 125.0f;
     sprite = QPixmap(":/assets/xwing.png");
-    sprite = sprite.scaled(110, 130, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+    sprite = sprite.scaled(100, 125, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     setPos(30, 260);
 }
 

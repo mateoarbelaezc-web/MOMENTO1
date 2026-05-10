@@ -433,6 +433,12 @@
 			null
 		],
 		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/pantallainstrucciones.h",
+			"MU",
+			"EWIEGA46WW/moc_pantallainstrucciones.cpp",
+			null
+		],
+		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/pelota.h",
 			"MU",
 			"EWIEGA46WW/moc_pelota.cpp",
@@ -558,6 +564,11 @@
 		],
 		[
 			"C:/Users/defaultuser0/Documents/TennisStarWars/obstaculo.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/defaultuser0/Documents/TennisStarWars/pantallainstrucciones.cpp",
 			"MU",
 			null
 		],
