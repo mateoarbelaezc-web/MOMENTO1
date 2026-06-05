@@ -1,13 +1,13 @@
-#ifndef NAVEREBELDE_H
-#define NAVEREBELDE_H
+#ifndef JUGADOR_H
+#define JUGADOR_H
 
 #include <QGraphicsItem>
 #include <QPixmap>
 #include <QPainterPath>
 
-class NaveRebelde : public QGraphicsItem {
+class Jugador : public QGraphicsItem {
 public:
-    NaveRebelde();
+    Jugador();
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     void moverArriba();

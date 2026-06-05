@@ -9,7 +9,7 @@
 #include <QMouseEvent>
 #include <QGraphicsPixmapItem>
 #include "pelota.h"
-#include "naverebelde.h"
+#include "jugador.h"
 #include "naveimperial.h"
 #include "marcador.h"
 #include "obstaculo.h"
@@ -36,7 +36,7 @@ private:
     QGraphicsView* vista;
     QTimer* timer;
     Pelota* pelota;
-    NaveRebelde* naveRebelde;
+    Jugador* jugador;
     NaveImperial* naveImperial;
     Marcador* marcador;
     bool teclaArriba, teclaAbajo;
@@ -55,7 +55,7 @@ private:
     enum ModoJuego { MODO_MENU, MODO_TENIS, MODO_JEDI };
     ModoJuego modoActual;
     bool teclaA, teclaD, teclaSpace, teclaJ;
-    NaveRebelde* jedi;
+    Jugador* jedi;
     NaveImperial* atat;
     QVector<Pelota*> bolasJedi;
     int vidas, tiempoRestante;

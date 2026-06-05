@@ -1,8 +1,8 @@
-#include "naverebelde.h"
+#include "jugador.h"
 #include <QPainter>
 #include <cmath>
 
-NaveRebelde::NaveRebelde() {
+Jugador::Jugador() {
     ancho = 100; alto = 125;
     sprite = QPixmap(":/assets/xwing.png").scaled(100,125,Qt::KeepAspectRatio,Qt::SmoothTransformation);
     setPos(30,260);
@@ -37,12 +37,12 @@ NaveRebelde::NaveRebelde() {
     walkToggle = false;
 }
 
-QRectF NaveRebelde::boundingRect() const {
+QRectF Jugador::boundingRect() const {
     if (modoJedi) return QRectF(0, 0, ancho, alto);
     else return QRectF(20, 10, ancho-40, alto-20);
 }
 
-void NaveRebelde::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
+void Jugador::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
     if (modoJedi) {
         QPixmap* current = &spriteIdle;
 
@@ -67,7 +67,7 @@ void NaveRebelde::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWid
     }
 }
 
-QPainterPath NaveRebelde::shape() const {
+QPainterPath Jugador::shape() const {
     QPainterPath path;
     if (modoJedi) path.addRect(boundingRect());
     else {
@@ -77,10 +77,10 @@ QPainterPath NaveRebelde::shape() const {
     return path;
 }
 
-void NaveRebelde::moverArriba() { if (!modoJedi && y()>0) setPos(x(), y()-6); }
-void NaveRebelde::moverAbajo()  { if (!modoJedi && y()+alto<595) setPos(x(), y()+6); }
+void Jugador::moverArriba() { if (!modoJedi && y()>0) setPos(x(), y()-6); }
+void Jugador::moverAbajo()  { if (!modoJedi && y()+alto<595) setPos(x(), y()+6); }
 
-void NaveRebelde::setModoJedi(bool activar) {
+void Jugador::setModoJedi(bool activar) {
     modoJedi = activar;
     if (modoJedi) {
         ancho = spriteIdle.isNull() ? 60 : spriteIdle.width();
@@ -95,7 +95,7 @@ void NaveRebelde::setModoJedi(bool activar) {
     }
 }
 
-void NaveRebelde::actualizarFisica() {
+void Jugador::actualizarFisica() {
     if (!modoJedi) return;
     if (izquierdaPresionada) vx = -velocidadMovimiento * multiplicadorVel;
     else if (derechaPresionada) vx = velocidadMovimiento * multiplicadorVel;
@@ -135,25 +135,25 @@ void NaveRebelde::actualizarFisica() {
     }
 }
 
-void NaveRebelde::saltar() {
+void Jugador::saltar() {
     if (modoJedi && enSuelo) {
         vy = potenciaSalto;
         enSuelo = false;
     }
 }
 
-void NaveRebelde::activarSwing() {
+void Jugador::activarSwing() {
     if (!modoJedi) return;
     swingActivo = true;
     swingFrames = 12;
     swingSpriteCounter = 12;
 }
 
-bool NaveRebelde::isSwinging() const { return swingActivo; }
-void NaveRebelde::setMultiplicadorVelocidad(float mult) { multiplicadorVel = mult; }
-void NaveRebelde::moverIzquierda(bool activo) { izquierdaPresionada = activo; }
-void NaveRebelde::moverDerecha(bool activo) { derechaPresionada = activo; }
-void NaveRebelde::setLimites(float izquierda, float derecha, float suelo) {
+bool Jugador::isSwinging() const { return swingActivo; }
+void Jugador::setMultiplicadorVelocidad(float mult) { multiplicadorVel = mult; }
+void Jugador::moverIzquierda(bool activo) { izquierdaPresionada = activo; }
+void Jugador::moverDerecha(bool activo) { derechaPresionada = activo; }
+void Jugador::setLimites(float izquierda, float derecha, float suelo) {
     limiteIzquierdo = izquierda;
     limiteDerecho = derecha;
     sueloY = suelo;
