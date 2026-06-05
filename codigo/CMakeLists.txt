@@ -35,6 +35,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         recursos.qrc
         sonidomanager.h sonidomanager.cpp
         pantallainstrucciones.h pantallainstrucciones.cpp
+        personaje.h personaje.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TennisStarWars APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

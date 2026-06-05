@@ -1,11 +1,10 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
-#include <QGraphicsItem>
-#include <QPixmap>
 #include <QPainterPath>
+#include "personaje.h"
 
-class Jugador : public QGraphicsItem {
+class Jugador : public Personaje {
 public:
     Jugador();
     QRectF boundingRect() const override;
@@ -13,7 +12,6 @@ public:
     void moverArriba();
     void moverAbajo();
     QPainterPath shape() const override;
-
     void setModoJedi(bool activar);
     void actualizarFisica();
     void saltar();
@@ -23,17 +21,13 @@ public:
     void moverIzquierda(bool activo);
     void moverDerecha(bool activo);
     void setLimites(float izquierda, float derecha, float sueloY);
-
 private:
-    float ancho, alto;
-    QPixmap sprite;
     QPixmap spriteIdle;
-    QPixmap spriteWalk1;   // dos frames de caminata
+    QPixmap spriteWalk1;
     QPixmap spriteWalk2;
     QPixmap spriteJump;
     QPixmap spriteSwing;
     bool modoJedi;
-
     float vx, vy;
     bool enSuelo;
     float gravedad, potenciaSalto, velocidadMovimiento, multiplicadorVel;
@@ -45,5 +39,4 @@ private:
     int walkFrameCounter;
     bool walkToggle;
 };
-
 #endif

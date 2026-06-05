@@ -1,21 +1,20 @@
 #ifndef ENEMIGO_H
 #define ENEMIGO_H
 
-#include <QGraphicsItem>
-#include <QPixmap>
-#include <QVector>
+#include "personaje.h"
 #include "pelota.h"
+#include <QPainterPath>
+#include <QVector>
 
 struct ShotRecord { int tipo; float vx, vy; int usos, exitos; };
 
-class Enemigo : public QGraphicsItem {
+class Enemigo : public Personaje {
 public:
     Enemigo(float velocidadIA, float margenError);
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     void seguirPelota(Pelota* pelota);
     QPainterPath shape() const override;
-
     void setModoJedi(bool activar, float factorAprendizaje);
     void leerPelota(const Pelota* pelota, bool fueGolpeadaPorJugador);
     void procesar();
@@ -26,10 +25,8 @@ public:
     void setMultiplicadorDanio(float mult);
     void setPosicionDisparo(float x, float y);
     int getTipoSeleccionado() const;
-
 private:
-    float ancho, alto, velocidadIA, margenError;
-    QPixmap sprite;
+    float velocidadIA, margenError;
     bool modoJedi;
     float percepX, percepY, percepVx, percepVy;
     bool bolaEntrante;
@@ -39,10 +36,7 @@ private:
     int vida;
     float multiplicadorDanio;
     float posDisparoX, posDisparoY;
-
-    // Cambio 2: penalizar repetición de mismo disparo sin éxito
-    int tipoAnterior;       // tipo usado en el disparo previo
-    int contadorRepeticion; // cuántas veces seguidas se usó el mismo tipo sin éxito
+    int tipoAnterior;
+    int contadorRepeticion;
 };
-
 #endif
