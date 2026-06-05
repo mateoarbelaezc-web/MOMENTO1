@@ -1,5 +1,5 @@
-#ifndef NAVEIMPERIAL_H
-#define NAVEIMPERIAL_H
+#ifndef ENEMIGO_H
+#define ENEMIGO_H
 
 #include <QGraphicsItem>
 #include <QPixmap>
@@ -8,9 +8,9 @@
 
 struct ShotRecord { int tipo; float vx, vy; int usos, exitos; };
 
-class NaveImperial : public QGraphicsItem {
+class Enemigo : public QGraphicsItem {
 public:
-    NaveImperial(float velocidadIA, float margenError);
+    Enemigo(float velocidadIA, float margenError);
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     void seguirPelota(Pelota* pelota);

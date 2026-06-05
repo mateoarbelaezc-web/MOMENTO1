@@ -1,9 +1,9 @@
-#include "naveimperial.h"
+#include "enemigo.h"
 #include <QPainter>
 #include <cstdlib>
 #include <cmath>
 
-NaveImperial::NaveImperial(float velocidadIA, float margenError) {
+Enemigo::Enemigo(float velocidadIA, float margenError) {
     ancho=100; alto=125;
     this->velocidadIA=velocidadIA; this->margenError=margenError;
     sprite=QPixmap(":/assets/tiefighter.png").scaled(100,125,Qt::KeepAspectRatio,Qt::SmoothTransformation);
@@ -12,22 +12,22 @@ NaveImperial::NaveImperial(float velocidadIA, float margenError) {
     srand(time(nullptr));
 }
 
-QRectF NaveImperial::boundingRect() const {
+QRectF Enemigo::boundingRect() const {
     return QRectF(0, 0, ancho, alto);
 }
 
-void NaveImperial::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
+void Enemigo::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
     if(!sprite.isNull()) painter->drawPixmap(0,0,sprite);
     else { painter->setBrush(Qt::red); painter->drawRect(boundingRect()); }
 }
 
-QPainterPath NaveImperial::shape() const {
+QPainterPath Enemigo::shape() const {
     QPainterPath path;
     path.addRect(0, 0, ancho, alto);
     return path;
 }
 
-void NaveImperial::seguirPelota(Pelota* pelota) {
+void Enemigo::seguirPelota(Pelota* pelota) {
     if(modoJedi) return;
     float error=(rand()%100)/100.0f*margenError;
     float objetivo=pelota->y()+error;
@@ -35,7 +35,7 @@ void NaveImperial::seguirPelota(Pelota* pelota) {
     else if(y()+alto/2>objetivo && y()>0) setPos(x(),y()-velocidadIA);
 }
 
-void NaveImperial::setModoJedi(bool activar, float factorAprendizaje) {
+void Enemigo::setModoJedi(bool activar, float factorAprendizaje) {
     modoJedi = activar;
     if (modoJedi) {
         sprite = QPixmap(":/assets/at-at.png").scaled(150,180,Qt::KeepAspectRatio,Qt::SmoothTransformation);
@@ -58,7 +58,7 @@ void NaveImperial::setModoJedi(bool activar, float factorAprendizaje) {
     }
 }
 
-void NaveImperial::leerPelota(const Pelota* pelota, bool fueGolpeadaPorJugador) {
+void Enemigo::leerPelota(const Pelota* pelota, bool fueGolpeadaPorJugador) {
     if(!modoJedi) return;
     if(pelota){
         percepX=pelota->x(); percepY=pelota->y();
@@ -72,7 +72,7 @@ void NaveImperial::leerPelota(const Pelota* pelota, bool fueGolpeadaPorJugador) 
     } else bolaEntrante=false;
 }
 
-void NaveImperial::procesar() {
+void Enemigo::procesar() {
     if(!modoJedi) return;
     if(!bolaEntrante){
         float pesoTotal=0;
@@ -92,7 +92,7 @@ void NaveImperial::procesar() {
     }
 }
 
-Pelota* NaveImperial::ejecutar() {
+Pelota* Enemigo::ejecutar() {
     if(!modoJedi) return nullptr;
     ShotRecord& rec=memoria[tipoSeleccionado];
     rec.usos++;
@@ -112,7 +112,7 @@ Pelota* NaveImperial::ejecutar() {
     return nueva;
 }
 
-void NaveImperial::aprender(bool jugadorPerdioVida, int tipoDisparoUsado) {
+void Enemigo::aprender(bool jugadorPerdioVida, int tipoDisparoUsado) {
     if(!modoJedi) return;
     if(jugadorPerdioVida){
         // El disparo fue exitoso: resetear contador de repetición
@@ -141,12 +141,12 @@ void NaveImperial::aprender(bool jugadorPerdioVida, int tipoDisparoUsado) {
     }
 }
 
-void NaveImperial::recibirDanio(int puntos) {
+void Enemigo::recibirDanio(int puntos) {
     if(modoJedi) vida -= puntos * multiplicadorDanio;
     if(vida < 0) vida = 0;
 }
 
-int NaveImperial::getVida() const { return vida; }
-void NaveImperial::setMultiplicadorDanio(float mult) { multiplicadorDanio=mult; }
-void NaveImperial::setPosicionDisparo(float x, float y) { posDisparoX=x; posDisparoY=y; }
-int NaveImperial::getTipoSeleccionado() const { return tipoSeleccionado; }
+int Enemigo::getVida() const { return vida; }
+void Enemigo::setMultiplicadorDanio(float mult) { multiplicadorDanio=mult; }
+void Enemigo::setPosicionDisparo(float x, float y) { posDisparoX=x; posDisparoY=y; }
+int Enemigo::getTipoSeleccionado() const { return tipoSeleccionado; }

@@ -26,7 +26,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         pelota.h pelota.cpp
         jugador.h jugador.cpp
-        naveimperial.h naveimperial.cpp
+        enemigo.h enemigo.cpp
         marcador.h marcador.cpp
         obstaculo.h obstaculo.cpp
         fisicamotor.h fisicamotor.cpp

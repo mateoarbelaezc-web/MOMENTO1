@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent) {
     dificultad = nullptr;
     pelota = nullptr;
     jugador = nullptr;
-    naveImperial = nullptr;
+    enemigo = nullptr;
     obstaculo = nullptr;
     marcador = nullptr;
     fisicaMotor = nullptr;
@@ -74,8 +74,8 @@ void MainWindow::iniciarJuego() {
     jugador = new Jugador();
     escena->addItem(jugador);
 
-    naveImperial = new NaveImperial(dificultad->getVelEnemigo(), dificultad->getMargenError());
-    escena->addItem(naveImperial);
+    enemigo = new Enemigo(dificultad->getVelEnemigo(), dificultad->getMargenError());
+    escena->addItem(enemigo);
 
     obstaculo = new Obstaculo(dificultad->getVelObstaculo());
     escena->addItem(obstaculo);
@@ -181,10 +181,10 @@ void MainWindow::actualizar() {
             fisicaMotor->aplicarAnguloImpacto(pelota, jugador->y(), jugador->boundingRect().height(), dificultad->getVelBola());
             if (pelota->getVelY() > 3.0f) pelota->setVelY(-pelota->getVelY());
         }
-        if (pelota->collidesWithItem(naveImperial)) {
+        if (pelota->collidesWithItem(enemigo)) {
             sonido->reproducirEfecto("qrc:/assets/golpe.wav");
             pelota->setVelX(-qAbs(pelota->getVelX()));
-            fisicaMotor->aplicarAnguloImpacto(pelota, naveImperial->y(), naveImperial->boundingRect().height(), dificultad->getVelBola());
+            fisicaMotor->aplicarAnguloImpacto(pelota, enemigo->y(), enemigo->boundingRect().height(), dificultad->getVelBola());
             if (pelota->getVelY() > 3.0f) pelota->setVelY(-pelota->getVelY());
         }
         if (pelota->collidesWithItem(obstaculo)) {
@@ -203,7 +203,7 @@ void MainWindow::actualizar() {
                 timer->stop();
                 escena->clear();
                 pelota = nullptr; jugador = nullptr;
-                naveImperial = nullptr; obstaculo = nullptr; marcador = nullptr;
+                enemigo = nullptr; obstaculo = nullptr; marcador = nullptr;
                 QPixmap imgVictoria = (marcador == nullptr) ? QPixmap(":/assets/victoria_imperio.png") : QPixmap(":/assets/victoria_rebelde.png");
                 // Siempre imperio ganó si pelota salió por izquierda
                 imgVictoria = QPixmap(":/assets/victoria_imperio.png");
@@ -224,7 +224,7 @@ void MainWindow::actualizar() {
                 timer->stop();
                 escena->clear();
                 pelota = nullptr; jugador = nullptr;
-                naveImperial = nullptr; obstaculo = nullptr; marcador = nullptr;
+                enemigo = nullptr; obstaculo = nullptr; marcador = nullptr;
                 QPixmap imgVictoria = QPixmap(":/assets/victoria_rebelde.png");
                 imgVictoria = imgVictoria.scaled(800, 600);
                 escena->setBackgroundBrush(imgVictoria);
@@ -240,7 +240,7 @@ void MainWindow::actualizar() {
         }
         if (teclaArriba) jugador->moverArriba();
         if (teclaAbajo) jugador->moverAbajo();
-        if (naveImperial) naveImperial->seguirPelota(pelota);
+        if (enemigo) enemigo->seguirPelota(pelota);
         if (obstaculo) obstaculo->moverVertical();
 
     } else if (modoActual == MODO_JEDI) {
@@ -277,7 +277,7 @@ void MainWindow::iniciarModoJedi(int nivelDificultad) {
     gameOverFlag = false;
 
     // AT-AT
-    atat = new NaveImperial(0, 0);
+    atat = new Enemigo(0, 0);
     atat->setModoJedi(true, dificultad->getFactorAprendizaje());
     atat->setPosicionDisparo(630, 300);
     escena->addItem(atat);
@@ -666,7 +666,7 @@ void MainWindow::volverAlMenu() {
     barraVidaAtat = nullptr;
     pelota = nullptr;
     jugador = nullptr;
-    naveImperial = nullptr;
+    enemigo = nullptr;
     obstaculo = nullptr;
     marcador = nullptr;
     fisicaMotor = nullptr;

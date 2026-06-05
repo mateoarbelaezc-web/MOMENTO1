@@ -10,7 +10,7 @@
 #include <QGraphicsPixmapItem>
 #include "pelota.h"
 #include "jugador.h"
-#include "naveimperial.h"
+#include "enemigo.h"
 #include "marcador.h"
 #include "obstaculo.h"
 #include "fisicamotor.h"
@@ -37,7 +37,7 @@ private:
     QTimer* timer;
     Pelota* pelota;
     Jugador* jugador;
-    NaveImperial* naveImperial;
+    Enemigo* enemigo;
     Marcador* marcador;
     bool teclaArriba, teclaAbajo;
     Obstaculo* obstaculo;
@@ -56,7 +56,7 @@ private:
     ModoJuego modoActual;
     bool teclaA, teclaD, teclaSpace, teclaJ;
     Jugador* jedi;
-    NaveImperial* atat;
+    Enemigo* atat;
     QVector<Pelota*> bolasJedi;
     int vidas, tiempoRestante;
     QTimer* temporizadorJuego;
