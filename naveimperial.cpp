@@ -38,10 +38,10 @@ void NaveImperial::seguirPelota(Pelota* pelota) {
 void NaveImperial::setModoJedi(bool activar, float factorAprendizaje) {
     modoJedi = activar;
     if (modoJedi) {
-        sprite = QPixmap(":/assets/tiefighter.png").scaled(100,120,Qt::KeepAspectRatio,Qt::SmoothTransformation);
+        sprite = QPixmap(":/assets/at-at.png").scaled(150,180,Qt::KeepAspectRatio,Qt::SmoothTransformation);
         ancho = sprite.width();
         alto = sprite.height();
-        setPos(680,290);
+        setPos(630,210);
         vida = 100;
         multiplicadorDanio = 1;
         dificultadIA = factorAprendizaje;
@@ -53,6 +53,8 @@ void NaveImperial::setModoJedi(bool activar, float factorAprendizaje) {
         posDisparoX = 680;
         posDisparoY = 320;
         bolaEntrante = false;
+        tipoAnterior = -1;
+        contadorRepeticion = 0;
     }
 }
 
@@ -96,6 +98,13 @@ Pelota* NaveImperial::ejecutar() {
     rec.usos++;
     float vx=rec.vx, vy=rec.vy;
     if(dificultadIA>1.0f){ vx*=(0.9f+(rand()%20)/100.0f); vy*=(0.9f+(rand()%20)/100.0f); }
+
+    // Limitar ángulo: velY nunca supera 0.6 * |velX| para evitar disparos
+    // hacia la esquina superior izquierda que el jugador no puede alcanzar
+    float limiteVelY = 0.6f * qAbs(vx);
+    if (vy < -limiteVelY) vy = -limiteVelY;
+    if (vy >  limiteVelY) vy =  limiteVelY;
+
     Pelota* nueva=new Pelota();
     nueva->setUsarGravedad(true);
     nueva->setVelX(vx); nueva->setVelY(vy);
@@ -106,8 +115,29 @@ Pelota* NaveImperial::ejecutar() {
 void NaveImperial::aprender(bool jugadorPerdioVida, int tipoDisparoUsado) {
     if(!modoJedi) return;
     if(jugadorPerdioVida){
+        // El disparo fue exitoso: resetear contador de repetición
         for(auto& rec:memoria)
             if(rec.tipo==tipoDisparoUsado){ rec.exitos++; break; }
+        contadorRepeticion = 0;
+        tipoAnterior = tipoDisparoUsado;
+    } else {
+        // Cambio 2: el disparo NO fue exitoso
+        if(tipoDisparoUsado == tipoAnterior) {
+            contadorRepeticion++;
+            // Si repite 3 veces seguidas sin éxito, penalizar ese tipo
+            if(contadorRepeticion >= 3) {
+                for(auto& rec:memoria) {
+                    if(rec.tipo==tipoDisparoUsado && rec.usos > 1) {
+                        rec.usos /= 2; // reducir peso para que lo elija menos
+                        break;
+                    }
+                }
+                contadorRepeticion = 0; // reiniciar para que pueda volver a penalizar
+            }
+        } else {
+            contadorRepeticion = 1;
+        }
+        tipoAnterior = tipoDisparoUsado;
     }
 }
 

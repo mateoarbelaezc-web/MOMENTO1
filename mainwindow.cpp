@@ -232,7 +232,7 @@ void MainWindow::actualizar() {
                 return;
             }
 
-           else {
+            else {
                 pelota->setPos(400,300);
                 pelota->setVelX(-dificultad->getVelBola());
                 pelota->setVelY(dificultad->getVelBola());
@@ -259,6 +259,11 @@ void MainWindow::iniciarModoJedi(int nivelDificultad) {
     fondo = fondo.scaled(800,600);
     escena->setBackgroundBrush(fondo);
 
+    QGraphicsRectItem* barrera = new QGraphicsRectItem(400, 0, 6, 520);
+    barrera->setBrush(QColor(0, 180, 255, 120));
+    barrera->setPen(Qt::NoPen);
+    escena->addItem(barrera);
+
     delete dificultad;
     dificultad = new Dificultad(nivelDificultad, true);
     float maxVel = dificultad->getVelBolaJedi();
@@ -274,10 +279,10 @@ void MainWindow::iniciarModoJedi(int nivelDificultad) {
     // AT-AT
     atat = new NaveImperial(0, 0);
     atat->setModoJedi(true, dificultad->getFactorAprendizaje());
-    atat->setPosicionDisparo(680, 320);
+    atat->setPosicionDisparo(630, 300);
     escena->addItem(atat);
 
-    vidas = 100;
+    vidas = 15;
     tiempoRestante = dificultad->getTiempoLimite();
     multiplicadorDanio = 1.0f;
     congelacionActiva = false;
@@ -396,7 +401,7 @@ void MainWindow::actualizarModoJedi() {
             }
         }
 
-        // Golpe con sable (mismo comportamiento original)
+        // Golpe con sable
         if (jedi->isSwinging() && bola->collidesWithItem(jedi)) {
             sonido->reproducirEfecto("sable");
             float maxVel = dificultad->getVelBolaJedi();
@@ -407,12 +412,24 @@ void MainWindow::actualizarModoJedi() {
             nuevaVelY = -maxVel * (0.7f + puntoImpacto * 0.2f);
             bola->setVelX(nuevaVelX);
             bola->setVelY(nuevaVelY);
+            bola->setDesviada(true);  // Cambio 4: marcar que el jugador la golpeó
             if (bola->x() <= jedi->x() + jedi->boundingRect().width())
                 bola->setX(jedi->x() + jedi->boundingRect().width() + 5);
         }
 
-        // Daño al AT-AT (si la bola va hacia la derecha)
-        if (bola->collidesWithItem(atat) && bola->getVelX() > 0) {
+        // Cambio borde: bola llegó al borde izquierdo sin ser desviada → desaparece sin consecuencias
+        if (bola->salio()) {
+            // El AT-AT NO aprende éxito: el disparo fue desperdiciado
+            hayBolaActiva = false;
+            escena->removeItem(bola);
+            delete bola;
+            bolasJedi.erase(bolasJedi.begin() + i);
+            i--;
+            continue;
+        }
+
+        // Daño al AT-AT: solo si la bola fue desviada por el jugador (Cambio 4)
+        if (bola->collidesWithItem(atat) && bola->getVelX() > 0 && bola->isDesviada()) {
             sonido->reproducirEfecto("golpe");
             int danio = 10 * multiplicadorDanio;
             atat->recibirDanio(danio);
@@ -456,7 +473,8 @@ void MainWindow::actualizarModoJedi() {
 
         // Limpieza fuera de pantalla
         if (bola->x() < -100 || bola->x() > 900 || bola->y() < -100 || bola->y() > 700) {
-            if (atat) atat->aprender(true, atat->getTipoSeleccionado());
+            // Cambio 2: disparo fallido, el agente debe aprenderlo
+            if (atat) atat->aprender(false, atat->getTipoSeleccionado());
             hayBolaActiva = false;
             escena->removeItem(bola);
             delete bola;

@@ -21,5 +21,6 @@
         <file>assets/jedi_walk1.png</file>
         <file>assets/jedi_walk2.png</file>
         <file>assets/pelota2.png</file>
+        <file>assets/at-at.png</file>
     </qresource>
 </RCC>

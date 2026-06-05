@@ -23,7 +23,7 @@ NaveRebelde::NaveRebelde() {
     vx = vy = 0;
     enSuelo = true;
     gravedad = 0.6f;
-    potenciaSalto = -13.0f;
+    potenciaSalto = -17.0f;
     velocidadMovimiento = 5.0f;
     multiplicadorVel = 1.0f;
     limiteIzquierdo = 10;

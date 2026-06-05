@@ -39,6 +39,10 @@ private:
     int vida;
     float multiplicadorDanio;
     float posDisparoX, posDisparoY;
+
+    // Cambio 2: penalizar repetición de mismo disparo sin éxito
+    int tipoAnterior;       // tipo usado en el disparo previo
+    int contadorRepeticion; // cuántas veces seguidas se usó el mismo tipo sin éxito
 };
 
 #endif

@@ -6,6 +6,7 @@ Pelota::Pelota() {
     sprite=QPixmap(":/assets/pelota.png").scaled(40,40,Qt::KeepAspectRatio,Qt::SmoothTransformation);
     setPos(400,300);
     usarGravedad=false; bounceCount=0; dead=false; frozen=false; restitution=0.6f;
+    fueDesviada=false; salio_=false;
 }
 QRectF Pelota::boundingRect() const { return QRectF(-radio,-radio,radio*2,radio*2); }
 void Pelota::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) {
@@ -44,8 +45,11 @@ void Pelota::actualizarConGravedad(float gravedad, float sueloY) {
         if (bounceCount >= 2) dead = true;
     }
 
-    // Rebote en paredes laterales
-    if (x() <= 0)              { setX(0);              velX = qAbs(velX); }
+    // Borde izquierdo: si no fue desviada por el jugador, desaparece (no rebota)
+    if (x() <= 0) {
+        if (!fueDesviada) { salio_ = true; return; }
+        setX(0); velX = qAbs(velX);  // solo rebota si el jugador ya la tocó
+    }
     if (x() + radio*2 >= 800)  { setX(800 - radio*2);  velX = -qAbs(velX); }
     // Rebote en techo
     if (y() <= 0) { setY(0); velY = qAbs(velY) * 0.8f; }
@@ -55,3 +59,7 @@ bool Pelota::isDead() const { return dead; }
 void Pelota::setFrozen(bool congelada) {
     frozen = congelada;
 }
+
+void Pelota::setDesviada(bool desviada) { fueDesviada = desviada; }
+bool Pelota::isDesviada() const { return fueDesviada; }
+bool Pelota::salio() const { return salio_; }
