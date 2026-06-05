@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assets/asteroides.png</file>
+        <file>assets/pelota.png</file>
+        <file>assets/tiefighter.png</file>
+        <file>assets/xwing.png</file>
+        <file>assets/fondo.png</file>
+        <file>assets/punto.wav</file>
+        <file>assets/musica_menu.mp3</file>
+        <file>assets/musica_facil.mp3</file>
+        <file>assets/musica_dificil.mp3</file>
+        <file>assets/golpe.wav</file>
+        <file>assets/fondo_menu.png</file>
+        <file>assets/victoria_imperio.png</file>
+        <file>assets/victoria_rebelde.png</file>
+        <file>assets/gravedad.wav</file>
+        <file>assets/fondo2.png</file>
+        <file>assets/jedi_idle.png</file>
+        <file>assets/jedi_jump.png</file>
+        <file>assets/jedi_swing.png</file>
+        <file>assets/jedi_walk1.png</file>
+        <file>assets/jedi_walk2.png</file>
+        <file>assets/pelota2.png</file>
+        <file>assets/at-at.png</file>
+    </qresource>
+</RCC>
