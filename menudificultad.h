@@ -15,15 +15,16 @@ public:
     bool clicEnFacil(QPointF pos);
     bool clicEnDificil(QPointF pos);
     bool clicEnInstrucciones(QPointF pos);
+    bool clicEnJediFacil(QPointF pos);
+    bool clicEnJediNormal(QPointF pos);
+    bool clicEnJediDificil(QPointF pos);
 
 private:
     QGraphicsScene* escena;
-    QGraphicsRectItem* botonFacil;
-    QGraphicsRectItem* botonDificil;
-    QGraphicsRectItem* botonInstrucciones;
-    QGraphicsTextItem* textoFacil;
-    QGraphicsTextItem* textoDificil;
-    QGraphicsTextItem* textoInstrucciones;
+    QGraphicsRectItem *botonFacil, *botonDificil, *botonInstrucciones;
+    QGraphicsTextItem *textoFacil, *textoDificil, *textoInstrucciones;
+    QGraphicsRectItem *botonJediFacil, *botonJediNormal, *botonJediDificil;
+    QGraphicsTextItem *textoJediFacil, *textoJediNormal, *textoJediDificil;
 };
 
 #endif

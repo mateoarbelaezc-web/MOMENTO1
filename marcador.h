@@ -20,30 +20,16 @@ public:
     bool getEnTieBreak() { return enTieBreak; }
 
 private:
-    // Puntos del juego actual (0,15,30,40,deuce)
-    int puntosJugador;
-    int puntosImperio;
-
-    // Games ganados en el set actual
-    int gamesJugador;
-    int gamesImperio;
-
-    // Sets ganados
-    int setsJugador;
-    int setsImperio;
-
+    int puntosJugador, puntosImperio;
+    int gamesJugador, gamesImperio;
+    int setsJugador, setsImperio;
     bool enDeuce;
-    bool ventajaJugador;
-    bool ventajaImperio;
-
+    bool ventajaJugador, ventajaImperio;
     QString puntoATexto(int puntos);
     void ganarJuego(bool jugador);
     void ganarSet(bool jugador);
-
     bool enTieBreak;
-    int puntosTieJugador;
-    int puntosTieImperio;
-
+    int puntosTieJugador, puntosTieImperio;
     int gamesParaGanar;
 };
 

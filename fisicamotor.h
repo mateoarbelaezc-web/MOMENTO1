@@ -2,8 +2,6 @@
 #define FISICAMOTOR_H
 
 #include "pelota.h"
-#include "naverebelde.h"
-#include "naveimperial.h"
 
 class FisicaMotor {
 public:

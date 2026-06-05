@@ -13,7 +13,6 @@ public:
     void mostrar();
     void ocultar();
     bool clicEnVolver(QPointF pos);
-
 private:
     QGraphicsScene* escena;
     QGraphicsTextItem* textoInstrucciones;
@@ -21,5 +20,4 @@ private:
     QGraphicsTextItem* textoVolver;
     QGraphicsRectItem* fondoPanel;
 };
-
 #endif

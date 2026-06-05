@@ -4,7 +4,9 @@
 class Dificultad {
 public:
     Dificultad(int nivel);
+    Dificultad(int nivelJedi, bool esModoJedi);
 
+    // Tenis
     float getVelBola() const;
     float getVelEnemigo() const;
     float getMargenError() const;
@@ -12,13 +14,21 @@ public:
     int getGamesParaGanar() const;
     int getNivel() const;
 
+    // Jedi
+    float getVelBolaJedi() const;
+    float getFrecuenciaPowerUps() const;
+    float getFactorAprendizaje() const;
+    int getTiempoLimite() const;
+
 private:
     int nivel;
-    float velBola;
-    float velEnemigo;
-    float margenError;
+    bool modoJedi;
+    // Tenis
+    float velBola, velEnemigo, margenError, velObstaculo;
     int gamesParaGanar;
-    float velObstaculo;
+    // Jedi
+    float velBolaJedi, frecuenciaPowerUps, factorAprendizaje;
+    int tiempoLimite;
 };
 
 #endif

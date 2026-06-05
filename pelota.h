@@ -2,7 +2,6 @@
 #define PELOTA_H
 
 #include <QGraphicsItem>
-#include <QPainter>
 #include <QPixmap>
 
 class Pelota : public QGraphicsItem {
@@ -18,11 +17,19 @@ public:
     void setVelY(float vy);
     QPainterPath shape() const override;
 
+    void setUsarGravedad(bool usar);
+    void actualizarConGravedad(float gravedad, float sueloY);
+    int getBounceCount() const;
+    bool isDead() const;
+    void setFrozen(bool congelada);
+
 private:
-    float velX;
-    float velY;
-    float radio;
+    float velX, velY, radio;
     QPixmap sprite;
+    bool usarGravedad;
+    int bounceCount;
+    bool dead, frozen;
+    float restitution;
 };
 
 #endif

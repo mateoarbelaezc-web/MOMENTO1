@@ -21,6 +21,11 @@ private:
     QSoundEffect* efectoGolpe;
     QSoundEffect* efectoPunto;
     QSoundEffect* efectoGravedad;
+    QSoundEffect* efectoSable;
+    QSoundEffect* efectoPowerUp;
+    QSoundEffect* efectoPenalidad;
+    QSoundEffect* efectoVictoria;
+    QSoundEffect* efectoDerrota;
 };
 
 #endif

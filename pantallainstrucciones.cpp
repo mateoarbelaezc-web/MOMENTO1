@@ -4,58 +4,54 @@
 PantallaInstrucciones::PantallaInstrucciones(QGraphicsScene* escena) {
     this->escena = escena;
 
-    // Panel de fondo
-    fondoPanel = new QGraphicsRectItem(80, 30, 640, 560);
-    fondoPanel->setBrush(QColor(0, 0, 0, 200));
+    fondoPanel = new QGraphicsRectItem(50, 20, 700, 570);
+    fondoPanel->setBrush(QColor(0, 0, 0, 210));
     fondoPanel->setZValue(5);
 
-    // Texto de instrucciones
     QString instrucciones =
-        "INSTRUCCIONES\n\n"
-        "CONTROLES:\n"
-        "  Flecha arriba / abajo: mover nave\n"
-        "  ESC: volver al menu\n\n"
-        "OBJETIVO:\n"
-        "  Golpea el torpedo proton con tu nave\n"
-        "  y evita que el Imperio anote puntos.\n\n"
-        "PUNTUACION:\n"
-        "  Sistema de puntuacion real de tenis\n"
-        "  (15, 30, 40, Deuce, Ad, Tie-break)\n\n"
-        "CAMPO GRAVITACIONAL:\n"
-        "  Al cruzar el campo gravitacional,\n"
-        "  la trayectoria del torpedo puede\n"
-        "  desviarse de forma impredecible.\n\n"
-        "DIFICULTAD:\n"
-        "  Facil:  2 games, enemigo lento,\n"
-        "          campo lento\n"
-        "  Dificil: 3 games, enemigo rapido,\n"
-        "          campo mas impredecible\n\n"
-        "CONTEXTO:\n"
-        "  La Alianza Rebelde enfrenta al Imperio\n"
-        "  Galactico en una batalla espacial\n"
-        "  de tenis cerca de la Estrella de la Muerte.";
+        "══════════  INSTRUCCIONES  ══════════\n\n"
+        "MODO TENIS\n"
+        "  ↑ / ↓        Mover nave\n"
+        "  ESC          Volver al menú\n\n"
+        "  Objetivo: devuelve la pelota y anota puntos.\n"
+        "  Sistema de puntuación real de tenis (games y sets).\n"
+        "  El campo gravitacional desvía la trayectoria.\n\n"
+        "  Fácil:   2 games para ganar, velocidad lenta\n"
+        "  Difícil: 3 games para ganar, velocidad rápida\n\n"
+        "────────────────────────────────────────\n\n"
+        "MODO JEDI\n"
+        "  A / D        Moverse izquierda / derecha\n"
+        "  ESPACIO      Saltar\n"
+        "  J            Golpear con sable láser\n"
+        "  ESC          Volver al menú\n\n"
+        "  Objetivo: deflecta los disparos del AT-AT\n"
+        "  de vuelta hacia él para destruirlo.\n\n"
+        "  Power-ups:  daño x2 o congela los disparos\n"
+        "  Penalidades: lentitud o disparos más rápidos\n\n"
+        "  Fácil:   más tiempo, disparos lentos\n"
+        "  Normal:  velocidad media\n"
+        "  Difícil: poco tiempo, disparos rápidos";
 
     textoInstrucciones = new QGraphicsTextItem(instrucciones);
     textoInstrucciones->setDefaultTextColor(Qt::white);
-    textoInstrucciones->setFont(QFont("Arial", 11));
-    textoInstrucciones->setPos(100, 40);
+    textoInstrucciones->setFont(QFont("Arial", 10));
+    textoInstrucciones->setPos(65, 28);
     textoInstrucciones->setZValue(6);
 
-    // Boton volver
-    botonVolver = new QGraphicsRectItem(330, 565, 140, 40);
+    botonVolver = new QGraphicsRectItem(330, 565, 140, 35);
     botonVolver->setBrush(Qt::darkRed);
     botonVolver->setZValue(6);
+
     textoVolver = new QGraphicsTextItem("VOLVER");
     textoVolver->setDefaultTextColor(Qt::white);
-    textoVolver->setFont(QFont("Arial", 14, QFont::Bold));
-    textoVolver->setPos(355, 570);
+    textoVolver->setFont(QFont("Arial", 13, QFont::Bold));
+    textoVolver->setPos(358, 569);
     textoVolver->setZValue(7);
 
     escena->addItem(fondoPanel);
     escena->addItem(textoInstrucciones);
     escena->addItem(botonVolver);
     escena->addItem(textoVolver);
-
     ocultar();
 }
 
