@@ -73,21 +73,27 @@ void Enemigo::leerPelota(const Pelota* pelota, bool fueGolpeadaPorJugador) {
 }
 
 void Enemigo::procesar() {
-    if(!modoJedi) return;
-    if(!bolaEntrante){
-        float pesoTotal=0;
-        for(auto& rec:memoria) pesoTotal+=rec.usos+rec.exitos*dificultadIA;
-        float r=(rand()%10000)/10000.0f*pesoTotal;
-        float acum=0;
-        for(auto& rec:memoria){
-            acum+=rec.usos+rec.exitos*dificultadIA;
-            if(r<=acum){ tipoSeleccionado=rec.tipo; break; }
+    if (!modoJedi) return;
+    if (!bolaEntrante) {
+        float pesoTotal = 0;
+        for (auto& rec : memoria) {
+            float distancia = qAbs(posXJugadorActual - rec.posXJugador);
+            float bonusPosicion = (distancia < 80.0f) ? 2.0f : 1.0f;
+            pesoTotal += (rec.usos + rec.exitos * dificultadIA) * bonusPosicion;
+        }
+        float r = (rand() % 10000) / 10000.0f * pesoTotal;
+        float acum = 0;
+        for (auto& rec : memoria) {
+            float distancia = qAbs(posXJugadorActual - rec.posXJugador);
+            float bonusPosicion = (distancia < 80.0f) ? 2.0f : 1.0f;
+            acum += (rec.usos + rec.exitos * dificultadIA) * bonusPosicion;
+            if (r <= acum) { tipoSeleccionado = rec.tipo; break; }
         }
     } else {
-        switch(ultimaZonaImpacto){
-        case 1: tipoSeleccionado=1; break;
-        case 2: tipoSeleccionado=0; break;
-        default: tipoSeleccionado=2; break;
+        switch (ultimaZonaImpacto) {
+        case 1: tipoSeleccionado = 1; break;
+        case 2: tipoSeleccionado = 0; break;
+        default: tipoSeleccionado = 2; break;
         }
     }
 }
@@ -114,10 +120,13 @@ Pelota* Enemigo::ejecutar() {
 
 void Enemigo::aprender(bool jugadorPerdioVida, int tipoDisparoUsado) {
     if(!modoJedi) return;
-    if(jugadorPerdioVida){
-        // El disparo fue exitoso: resetear contador de repetición
-        for(auto& rec:memoria)
-            if(rec.tipo==tipoDisparoUsado){ rec.exitos++; break; }
+    if (jugadorPerdioVida) {
+        for (auto& rec : memoria)
+            if (rec.tipo == tipoDisparoUsado) {
+                rec.exitos++;
+                rec.posXJugador = posXJugadorActual; // guardar posición del éxito
+                break;
+            }
         contadorRepeticion = 0;
         tipoAnterior = tipoDisparoUsado;
     } else {
@@ -150,3 +159,7 @@ int Enemigo::getVida() const { return vida; }
 void Enemigo::setMultiplicadorDanio(float mult) { multiplicadorDanio=mult; }
 void Enemigo::setPosicionDisparo(float x, float y) { posDisparoX=x; posDisparoY=y; }
 int Enemigo::getTipoSeleccionado() const { return tipoSeleccionado; }
+
+void Enemigo::setPosXJugador(float x) {
+    posXJugadorActual = x;
+}

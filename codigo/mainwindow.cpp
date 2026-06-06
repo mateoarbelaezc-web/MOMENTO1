@@ -59,8 +59,7 @@ MainWindow::~MainWindow() {}
 
 void MainWindow::iniciarJuego() {
     sonido->detenerMusica();
-    if (dificultad->getNivel()==1) sonido->reproducirMusica("qrc:/assets/musica_facil.mp3");
-    else sonido->reproducirMusica("qrc:/assets/musica_dificil.mp3");
+    sonido->reproducirMusica("qrc:/assets/musica_dificil.mp3");
 
     QPixmap fondoJuego(":/assets/fondo.png");
     fondoJuego = fondoJuego.scaled(800,600);
@@ -251,7 +250,7 @@ void MainWindow::actualizar() {
 void MainWindow::iniciarModoJedi(int nivelDificultad) {
 
     sonido->detenerMusica();
-    sonido->reproducirMusica("qrc:/assets/musica_jedi.mp3");
+    sonido->reproducirMusica("qrc:/assets/musica_facil.mp3");
     escena->clear();
 
     QPixmap fondo(":/assets/fondo2.png");
@@ -381,6 +380,8 @@ void MainWindow::actualizarModoJedi() {
     if (teclaSpace) jedi->saltar();
     if (teclaJ) jedi->activarSwing();
     jedi->actualizarFisica();
+
+    if (atat && jedi) atat->setPosXJugador(jedi->x());
 
     for (int i = 0; i < bolasJedi.size(); ++i) {
         Pelota* bola = bolasJedi[i];

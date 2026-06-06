@@ -6,8 +6,7 @@
 #include <QPainterPath>
 #include <QVector>
 
-struct ShotRecord { int tipo; float vx, vy; int usos, exitos; };
-
+struct ShotRecord { int tipo; float vx, vy; int usos, exitos; float posXJugador; };
 class Enemigo : public Personaje {
 public:
     Enemigo(float velocidadIA, float margenError);
@@ -25,6 +24,7 @@ public:
     void setMultiplicadorDanio(float mult);
     void setPosicionDisparo(float x, float y);
     int getTipoSeleccionado() const;
+    void setPosXJugador(float x);
 private:
     float velocidadIA, margenError;
     bool modoJedi;
@@ -38,5 +38,6 @@ private:
     float posDisparoX, posDisparoY;
     int tipoAnterior;
     int contadorRepeticion;
+    float posXJugadorActual;
 };
 #endif
