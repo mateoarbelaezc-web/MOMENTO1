@@ -281,7 +281,7 @@ void MainWindow::iniciarModoJedi(int nivelDificultad) {
     atat->setPosicionDisparo(630, 300);
     escena->addItem(atat);
 
-    vidas = 15;
+    vidas = 10;
     tiempoRestante = dificultad->getTiempoLimite();
     multiplicadorDanio = 1.0f;
     congelacionActiva = false;
